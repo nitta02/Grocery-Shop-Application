@@ -18,12 +18,14 @@ class CommonListTile extends StatelessWidget {
       title: Text(
         title,
         style: const TextStyle(
-          fontWeight: FontWeight.w500,
+          fontSize: 15,
+          fontWeight: FontWeight.w400,
         ),
       ),
       subtitle: Text(
         subtitle ?? "",
         style: const TextStyle(
+          fontSize: 12,
           fontWeight: FontWeight.w200,
         ),
       ),

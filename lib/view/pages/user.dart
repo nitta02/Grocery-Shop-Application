@@ -2,8 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/controller/widgets/commonListtile.dart';
 
-class UserPage extends StatelessWidget {
+class UserPage extends StatefulWidget {
   const UserPage({super.key});
+
+  @override
+  State<UserPage> createState() => _UserPageState();
+}
+
+class _UserPageState extends State<UserPage> {
+  final addressEditController = TextEditingController();
+
+  @override
+  void dispose() {
+    addressEditController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +61,10 @@ class UserPage extends StatelessWidget {
                   CommonListTile(
                     title: 'Address',
                     subtitle: 'Address Details',
-                    iconData: Icons.arrow_forward_ios,
-                    onTap: () {},
+                    iconData: IconlyLight.arrowRight2,
+                    onTap: () async {
+                      await _showAddressDetails(context);
+                    },
                   ),
                   CommonListTile(
                     title: 'Orders',
@@ -58,17 +73,17 @@ class UserPage extends StatelessWidget {
                   ),
                   CommonListTile(
                     title: 'Wishlist',
-                    iconData: Icons.favorite,
+                    iconData: IconlyLight.heart,
                     onTap: () {},
                   ),
                   CommonListTile(
                     title: 'Viewed',
-                    iconData: Icons.remove_red_eye_outlined,
+                    iconData: IconlyLight.show,
                     onTap: () {},
                   ),
                   CommonListTile(
                     title: 'Theme Mode',
-                    iconData: Icons.light_mode,
+                    iconData: IconlyLight.star,
                     onTap: () {},
                   ),
                   CommonListTile(
@@ -78,14 +93,93 @@ class UserPage extends StatelessWidget {
                   ),
                   CommonListTile(
                     title: 'Sign Out',
-                    iconData: Icons.logout_rounded,
-                    onTap: () {},
+                    iconData: IconlyLight.logout,
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          shape: const BeveledRectangleBorder(),
+                          title: const Icon(IconlyLight.dangerCircle),
+                          actions: [
+                            ElevatedButton(
+                              style: const ButtonStyle(
+                                  shape: WidgetStatePropertyAll(
+                                      BeveledRectangleBorder())),
+                              onPressed: () {},
+                              child: const Text(
+                                'Cancel',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                            ElevatedButton(
+                              style: const ButtonStyle(
+                                  shape: WidgetStatePropertyAll(
+                                      BeveledRectangleBorder())),
+                              onPressed: () {},
+                              child: const Text(
+                                'Sure',
+                                style: TextStyle(
+                                  color: Colors.green,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  //Address Details and Edit Function
+  Future<void> _showAddressDetails(BuildContext context) async {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: const BeveledRectangleBorder(),
+        title: const Text(
+          'Update Address',
+        ),
+        content: TextFormField(
+          controller: addressEditController,
+          maxLines: 3,
+          onChanged: (value) {
+            addressEditController.text = value;
+            print(value);
+          },
+        ),
+        actions: [
+          ElevatedButton(
+            style: const ButtonStyle(
+                shape: WidgetStatePropertyAll(BeveledRectangleBorder())),
+            onPressed: () {},
+            child: const Text(
+              'Cancel',
+              style: TextStyle(
+                color: Colors.red,
+              ),
+            ),
+          ),
+          ElevatedButton(
+            style: const ButtonStyle(
+                shape: WidgetStatePropertyAll(BeveledRectangleBorder())),
+            onPressed: () {},
+            child: const Text(
+              'Update',
+              style: TextStyle(
+                color: Colors.green,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
