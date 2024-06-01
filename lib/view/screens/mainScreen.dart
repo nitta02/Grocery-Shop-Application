@@ -17,12 +17,26 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   //List of Pages
 
-  List<Widget> pages = [
-    const HomePage(),
-    const CatagoryPage(),
-    const CartPage(),
-    const UserPage(),
+  List<Map<String, dynamic>> pages = [
+    {
+      "page": const HomePage(),
+      "title": "Home",
+    },
+    {
+      "page": const CatagoryPage(),
+      "title": "Category",
+    },
+    {
+      "page": const CartPage(),
+      "title": "Cart",
+    },
+    {
+      "page": const UserPage(),
+      "title": "User",
+    },
   ];
+
+  //Current Index & page Select Function
   int currentIndex = 0;
 
   void selectedPage(int index) {
@@ -34,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentIndex],
+      body: pages[currentIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
@@ -62,10 +76,9 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
         selectedIconTheme: const IconThemeData(
-          color: Colors.black,
+          color: Colors.green,
         ),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
+        elevation: 5,
       ),
     );
   }
