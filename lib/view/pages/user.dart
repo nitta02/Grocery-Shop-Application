@@ -94,40 +94,8 @@ class _UserPageState extends State<UserPage> {
                   CommonListTile(
                     title: 'Sign Out',
                     iconData: IconlyLight.logout,
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) => AlertDialog(
-                          shape: const BeveledRectangleBorder(),
-                          title: const Icon(IconlyLight.dangerCircle),
-                          actions: [
-                            ElevatedButton(
-                              style: const ButtonStyle(
-                                  shape: WidgetStatePropertyAll(
-                                      BeveledRectangleBorder())),
-                              onPressed: () {},
-                              child: const Text(
-                                'Cancel',
-                                style: TextStyle(
-                                  color: Colors.red,
-                                ),
-                              ),
-                            ),
-                            ElevatedButton(
-                              style: const ButtonStyle(
-                                  shape: WidgetStatePropertyAll(
-                                      BeveledRectangleBorder())),
-                              onPressed: () {},
-                              child: const Text(
-                                'Sure',
-                                style: TextStyle(
-                                  color: Colors.green,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
+                    onTap: () async {
+                      _showSignOutDialog();
                     },
                   ),
                 ],
@@ -174,6 +142,54 @@ class _UserPageState extends State<UserPage> {
             onPressed: () {},
             child: const Text(
               'Update',
+              style: TextStyle(
+                color: Colors.green,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  //Sign Out Function
+  Future<void> _showSignOutDialog() async {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: const BeveledRectangleBorder(),
+        title: const Text("Sign Out"),
+        content: const Row(
+          children: [
+            Icon(
+              IconlyLight.dangerCircle,
+              color: Colors.red,
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Text('Are You Sure?'),
+          ],
+        ),
+        actionsAlignment: MainAxisAlignment.spaceBetween,
+        actions: [
+          ElevatedButton(
+            style: const ButtonStyle(
+                shape: WidgetStatePropertyAll(BeveledRectangleBorder())),
+            onPressed: () {},
+            child: const Text(
+              'Cancel',
+              style: TextStyle(
+                color: Colors.red,
+              ),
+            ),
+          ),
+          ElevatedButton(
+            style: const ButtonStyle(
+                shape: WidgetStatePropertyAll(BeveledRectangleBorder())),
+            onPressed: () {},
+            child: const Text(
+              'Sure',
               style: TextStyle(
                 color: Colors.green,
               ),
