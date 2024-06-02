@@ -4,18 +4,30 @@ import 'package:grocery_shop_app/model/categoryModel.dart';
 List<CategoryModel> categoryModelList = [
   CategoryModel(
     categoryName: 'Fruits',
-    categoryImagePath: groceryCat1,
+    categoryImagePath: ImagePaths.groceryCat1,
   ),
   CategoryModel(
     categoryName: 'Harvest',
-    categoryImagePath: groceryCat2,
+    categoryImagePath: ImagePaths.groceryCat2,
   ),
   CategoryModel(
     categoryName: 'Nuts',
-    categoryImagePath: groceryCat3,
+    categoryImagePath: ImagePaths.groceryCat3,
   ),
   CategoryModel(
     categoryName: 'Mortar',
-    categoryImagePath: groceryCat4,
+    categoryImagePath: ImagePaths.groceryCat4,
+  ),
+  CategoryModel(
+    categoryName: 'Juice',
+    categoryImagePath: ImagePaths.groceryCat5,
+  ),
+  CategoryModel(
+    categoryName: 'Soft Drinks',
+    categoryImagePath: ImagePaths.groceryCat6,
+  ),
+  CategoryModel(
+    categoryName: 'Liquor',
+    categoryImagePath: ImagePaths.groceryCat7,
   ),
 ];
