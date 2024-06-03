@@ -12,19 +12,11 @@ class CategoryContainer extends StatelessWidget {
       height: 70,
       width: 80,
       decoration: BoxDecoration(
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(5),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black12,
-              offset: Offset(2.5, 5),
-            )
-          ],
-          gradient:
-              const LinearGradient(transform: GradientRotation(2.5), colors: [
-            Colors.white,
-            Colors.white,
-            Colors.green,
-          ])),
+          border: Border.all(
+            color: Colors.black12,
+          )),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
