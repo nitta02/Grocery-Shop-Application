@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/controller/widgets/category.dart';
 import 'package:grocery_shop_app/model/lists/categroyLists.dart';
+import 'package:grocery_shop_app/view/widgets/categoryContainer.dart';
 
 class CatagoryPage extends StatelessWidget {
   const CatagoryPage({super.key});

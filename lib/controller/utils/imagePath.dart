@@ -13,4 +13,14 @@ class ImagePaths {
   static const String groceryCat6 =
       'assets/icons/categories/002-soft-drink.png';
   static const String groceryCat7 = 'assets/icons/categories/003-liquor.png';
+
+//On SALE ITEMS
+
+  static const String onSaleItem1 = 'assets/icons/onSale/001-apple.png';
+  static const String onSaleItem2 = 'assets/icons/onSale/004-watermelon.png';
+  static const String onSaleItem3 = 'assets/icons/onSale/006-passion-fruit.png';
+  static const String onSaleItem4 = 'assets/icons/onSale/003-liquor.png';
+  static const String onSaleItem5 = 'assets/icons/onSale/hamburger.png';
+  static const String onSaleItem6 = 'assets/icons/onSale/spicy-food.png';
+  static const String onSaleItem7 = 'assets/icons/onSale/wheat-sack.png';
 }

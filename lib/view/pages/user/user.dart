@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/controller/widgets/commonListtile.dart';
+import 'package:grocery_shop_app/view/widgets/CommonListtile.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({super.key});

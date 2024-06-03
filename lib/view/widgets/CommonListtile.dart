@@ -4,32 +4,28 @@ class CommonListTile extends StatelessWidget {
   final String title;
   final String? subtitle;
   final IconData? iconData;
+
   final Function()? onTap;
-  const CommonListTile(
-      {super.key,
-      required this.title,
-      this.subtitle,
-      this.iconData,
-      this.onTap});
+  const CommonListTile({
+    super.key,
+    required this.title,
+    this.iconData,
+    this.onTap,
+    this.subtitle,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(
-        title,
-        style: const TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
+      trailing: Icon(iconData),
       subtitle: Text(
-        subtitle ?? "",
+        subtitle ?? '',
         style: const TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w200,
         ),
       ),
-      trailing: Icon(iconData),
+      title: Text(title),
       onTap: onTap,
     );
   }
