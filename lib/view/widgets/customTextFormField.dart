@@ -9,10 +9,10 @@ class CustomTextFormFeild extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-          icon: Icon(IconlyLight.notification),
-          suffixIcon: Icon(IconlyLight.search),
+          suffixIcon: const Icon(IconlyLight.search),
           hintText: hintText,
           border: OutlineInputBorder(
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(5),
           )),
     );

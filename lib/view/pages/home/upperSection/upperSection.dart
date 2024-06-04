@@ -37,8 +37,14 @@ class UpperSection extends StatelessWidget {
                   onPressed: () {}, icon: const Icon(IconlyLight.logout)),
             ],
           ),
-          const CustomTextFormFeild(
-            hintText: 'Search for products',
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const CustomTextFormFeild(
+              hintText: 'Search for products',
+            ),
           ),
         ],
       ),
