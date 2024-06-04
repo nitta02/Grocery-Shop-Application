@@ -8,7 +8,7 @@ class UpperSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 200,
       width: double.infinity,
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(
@@ -16,6 +16,13 @@ class UpperSection extends StatelessWidget {
         horizontal: 10,
       ),
       decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/img2.jpg',
+            ),
+            filterQuality: FilterQuality.high,
+            fit: BoxFit.fill,
+          ),
           color: Colors.green,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(15),
@@ -25,16 +32,19 @@ class UpperSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const SizedBox(
-            height: 5,
+            height: 2,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const CircleAvatar(
-                child: Icon(IconlyLight.profile),
+                backgroundImage: NetworkImage(
+                    'https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg'),
               ),
               IconButton(
-                  onPressed: () {}, icon: const Icon(IconlyLight.logout)),
+                onPressed: () {},
+                icon: const Icon(IconlyLight.bag),
+              ),
             ],
           ),
           Container(
@@ -42,8 +52,13 @@ class UpperSection extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const CustomTextFormFeild(
+            child: CustomTextFormFeild(
               hintText: 'Search for products',
+              hintStyle: TextStyle(
+                fontWeight: FontWeight.w200,
+                fontSize: 14,
+                letterSpacing: 1.8,
+              ),
             ),
           ),
         ],

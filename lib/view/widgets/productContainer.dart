@@ -14,65 +14,74 @@ class ProductContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      width: 80,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 3), // changes position of shadow
+          ),
+        ],
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 5,
-              horizontal: 5,
+          ClipRRect(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.green.withOpacity(0.2),
+              ),
+              child: Image.asset(
+                imagePath,
+                height: 120,
+                width: double.infinity,
+                fit: BoxFit.fitHeight,
+              ),
             ),
-            child: Column(
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  height: 80,
-                  child: Image.asset(
-                    imagePath,
-                  ),
-                ),
-                Text(productName),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("BDT ${price.toString()}"),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(IconlyLight.heart),
+                    Text(
+                      productName,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      "BDT ${price.toString()}",
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red,
+                      ),
                     ),
                   ],
                 ),
+                Container(
+                  height: 50,
+                  width: 40,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green,
+                  ),
+                  child: const Icon(
+                    IconlyLight.buy,
+                    color: Colors.white,
+                  ),
+                )
               ],
             ),
           ),
-          Row(
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                  style: const ButtonStyle(
-                    shape: WidgetStatePropertyAll(BeveledRectangleBorder()),
-                  ),
-                  onPressed: () {},
-                  child: const Text('Add'),
-                ),
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              Expanded(
-                child: ElevatedButton(
-                  style: const ButtonStyle(
-                    shape: WidgetStatePropertyAll(BeveledRectangleBorder()),
-                  ),
-                  onPressed: () {},
-                  child: const Text('Buy'),
-                ),
-              ),
-            ],
-          )
         ],
       ),
     );

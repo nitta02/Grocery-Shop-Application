@@ -32,6 +32,16 @@ class BodySection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _cardSwiperSection(swiperImages),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text('Popular Category'),
+              TextButton(
+                onPressed: () {},
+                child: const Text('View All'),
+              ),
+            ],
+          ),
           SizedBox(
             height: 100,
             child: ListView.builder(
@@ -51,34 +61,42 @@ class BodySection extends StatelessWidget {
             height: 10,
           ),
           _onSaleSection(onSaleItems),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text('Popular Products'),
-              TextButton(
-                onPressed: () {},
-                child: const Text('View All'),
-              ),
-            ],
-          ),
-          GridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 3 / 4.5,
-              crossAxisCount: 2,
-              crossAxisSpacing: 15,
-              mainAxisSpacing: 15,
-            ),
-            itemCount: allProducts.length,
-            shrinkWrap: true,
-            itemBuilder: (context, index) => ProductContainer(
-              imagePath: allProducts[index].itemImagePath,
-              productName: allProducts[index].itmeName,
-              price: allProducts[index].price,
-            ),
-          ),
+          _popularProductSection(allProducts),
         ],
       ),
+    );
+  }
+
+  Column _popularProductSection(List<AllProductsModel> allProducts) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Popular Products'),
+            TextButton(
+              onPressed: () {},
+              child: const Text('View All'),
+            ),
+          ],
+        ),
+        GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            childAspectRatio: 4 / 5,
+            crossAxisCount: 2,
+            crossAxisSpacing: 15,
+            mainAxisSpacing: 15,
+          ),
+          itemCount: allProducts.length,
+          shrinkWrap: true,
+          itemBuilder: (context, index) => ProductContainer(
+            imagePath: allProducts[index].itemImagePath,
+            productName: allProducts[index].itmeName,
+            price: allProducts[index].price,
+          ),
+        ),
+      ],
     );
   }
 
@@ -191,7 +209,7 @@ class BodySection extends StatelessWidget {
                                       ),
                                     ),
                                   ],
-                                )
+                                ),
                               ],
                             ),
                           ),
