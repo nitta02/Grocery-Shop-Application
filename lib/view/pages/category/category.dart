@@ -57,6 +57,7 @@ class CatagoryPage extends StatelessWidget {
                   itemBuilder: (context, index) => CategoryContainer(
                     categoryName: categoryModelList[index].categoryName,
                     imagePath: categoryModelList[index].categoryImagePath,
+                    shape: BoxShape.rectangle,
                   ),
                 ),
               ),

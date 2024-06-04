@@ -15,11 +15,11 @@ List<OnSaleClassModel> onSaleItemList = [
     onSaleItme: "Passion Fruit",
   ),
   OnSaleClassModel(
-    ImagePaths.onSaleItem4,
-    onSaleItme: "Hamburger",
+    ImagePaths.onSaleItem7,
+    onSaleItme: "Wheat-sack",
   ),
   OnSaleClassModel(
     ImagePaths.onSaleItem5,
-    onSaleItme: "Spicy Food",
+    onSaleItme: "Hamburger",
   ),
 ];
