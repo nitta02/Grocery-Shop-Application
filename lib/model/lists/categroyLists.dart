@@ -1,5 +1,5 @@
 import 'package:grocery_shop_app/controller/utils/imagePath.dart';
-import 'package:grocery_shop_app/model/class/categoryModel.dart';
+import 'package:grocery_shop_app/model/class/productModels.dart';
 
 List<CategoryModel> categoryModelList = [
   CategoryModel(
