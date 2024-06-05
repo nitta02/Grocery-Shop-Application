@@ -39,7 +39,7 @@ class UpperSection extends StatelessWidget {
             children: [
               const CircleAvatar(
                 backgroundImage: NetworkImage(
-                    'https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg'),
+                    'https://img.freepik.com/premium-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg'),
               ),
               IconButton(
                 onPressed: () {},
@@ -52,7 +52,7 @@ class UpperSection extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: CustomTextFormFeild(
+            child: const CustomTextFormFeild(
               hintText: 'Search for products',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.w200,

@@ -5,21 +5,26 @@ List<OnSaleClassModel> onSaleItemList = [
   OnSaleClassModel(
     onSaleImagePath: ImagePaths.onSaleItem1,
     onSaleItme: "Apple",
+    price: 10,
   ),
   OnSaleClassModel(
     onSaleImagePath: ImagePaths.onSaleItem2,
     onSaleItme: "Water Melon",
+    price: 10,
   ),
   OnSaleClassModel(
     onSaleImagePath: ImagePaths.onSaleItem3,
     onSaleItme: "Passion Fruit",
+    price: 10,
   ),
   OnSaleClassModel(
     onSaleImagePath: ImagePaths.onSaleItem7,
     onSaleItme: "Wheat-sack",
+    price: 10,
   ),
   OnSaleClassModel(
     onSaleImagePath: ImagePaths.onSaleItem5,
     onSaleItme: "Hamburger",
+    price: 10,
   ),
 ];

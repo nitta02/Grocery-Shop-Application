@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_shop_app/view/screens/mainScreen.dart';
+import 'package:grocery_shop_app/mainScreen.dart';
+import 'package:grocery_shop_app/routes/appRoutes.dart';
 
 // This will always work for lock screen Orientation.
 Future<void> main() async {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const MainScreen(),
+      routes: AppRoutes.routes,
     );
   }
 }

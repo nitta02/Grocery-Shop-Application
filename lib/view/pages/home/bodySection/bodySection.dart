@@ -6,6 +6,8 @@ import 'package:grocery_shop_app/model/class/productModels.dart';
 import 'package:grocery_shop_app/model/lists/allProducts.dart';
 import 'package:grocery_shop_app/model/lists/categroyLists.dart';
 import 'package:grocery_shop_app/model/lists/onSale.dart';
+import 'package:grocery_shop_app/routes/appRoutes.dart';
+import 'package:grocery_shop_app/routes/globalNavigator.dart';
 import 'package:grocery_shop_app/view/widgets/categoryContainer.dart';
 import 'package:grocery_shop_app/view/widgets/productContainer.dart';
 
@@ -37,7 +39,10 @@ class BodySection extends StatelessWidget {
             children: [
               const Text('Popular Category'),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  GlobalNavigator.navigateTo(
+                      context: context, routeName: AppRoutes.categoryScreen);
+                },
                 child: const Text('View All'),
               ),
             ],
@@ -60,14 +65,15 @@ class BodySection extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          _onSaleSection(onSaleItems),
-          _popularProductSection(allProducts),
+          _onSaleSection(onSaleItems, context),
+          _popularProductSection(allProducts, context),
         ],
       ),
     );
   }
 
-  Column _popularProductSection(List<AllProductsModel> allProducts) {
+  Column _popularProductSection(
+      List<AllProductsModel> allProducts, BuildContext context) {
     return Column(
       children: [
         Row(
@@ -75,7 +81,10 @@ class BodySection extends StatelessWidget {
           children: [
             const Text('Popular Products'),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                GlobalNavigator.navigateTo(
+                    context: context, routeName: AppRoutes.allProductScreen);
+              },
               child: const Text('View All'),
             ),
           ],
@@ -100,127 +109,148 @@ class BodySection extends StatelessWidget {
     );
   }
 
-  Row _onSaleSection(List<OnSaleClassModel> onSaleItems) {
-    return Row(
+  Column _onSaleSection(
+      List<OnSaleClassModel> onSaleItems, BuildContext context) {
+    return Column(
       children: [
-        RotatedBox(
-          quarterTurns: -1,
-          child: Row(
-            children: [
-              Text(
-                'On Sale'.toUpperCase(),
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: Colors.red,
-                ),
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              const Icon(
-                IconlyBold.discount,
-                color: Colors.red,
-              ),
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Product you Need'),
+            TextButton(
+              onPressed: () {
+                GlobalNavigator.navigateTo(
+                    context: context, routeName: AppRoutes.onSaleScreen);
+              },
+              child: const Text('View All'),
+            ),
+          ],
         ),
-        Flexible(
-          child: SizedBox(
-            height: 140,
-            child: ListView.builder(
-              itemCount: onSaleItems.length,
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 120,
-                      width: 210,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(
-                            color: Colors.black12,
-                          )),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(onSaleItems[index]
-                                              .onSaleImagePath))),
-                                ),
-                                Text(onSaleItems[index].onSaleItme),
-                              ],
-                            ),
-                          ),
-                          const RotatedBox(
-                            quarterTurns: -1,
-                            child: Divider(
-                              color: Colors.black12,
-                              thickness: 5,
-                            ),
-                          ),
-                          Expanded(
-                            child: Column(
-                              children: [
-                                const Text(
-                                  '1 KG',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Row(
+        Row(
+          children: [
+            RotatedBox(
+              quarterTurns: -1,
+              child: Row(
+                children: [
+                  Text(
+                    'On Sale'.toUpperCase(),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.red,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  const Icon(
+                    IconlyBold.discount,
+                    color: Colors.red,
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              child: SizedBox(
+                height: 140,
+                child: ListView.builder(
+                  itemCount: onSaleItems.length,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 120,
+                          width: 210,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              border: Border.all(
+                                color: Colors.black12,
+                              )),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    IconButton(
-                                        onPressed: () {},
-                                        icon: const Icon(IconlyLight.bag)),
-                                    IconButton(
-                                        onPressed: () {},
-                                        icon: const Icon(IconlyLight.heart)),
+                                    Container(
+                                      height: 60,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  onSaleItems[index]
+                                                      .onSaleImagePath))),
+                                    ),
+                                    Text(onSaleItems[index].onSaleItme),
                                   ],
                                 ),
-                                const Row(
+                              ),
+                              const RotatedBox(
+                                quarterTurns: -1,
+                                child: Divider(
+                                  color: Colors.black12,
+                                  thickness: 5,
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
                                   children: [
-                                    Text(
-                                      '\$0.99',
+                                    const Text(
+                                      '1 KG',
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 5,
+                                    Row(
+                                      children: [
+                                        IconButton(
+                                            onPressed: () {},
+                                            icon: const Icon(IconlyLight.bag)),
+                                        IconButton(
+                                            onPressed: () {},
+                                            icon:
+                                                const Icon(IconlyLight.heart)),
+                                      ],
                                     ),
-                                    Text(
-                                      '\$2.99',
-                                      style: TextStyle(
-                                        color: Colors.red,
-                                        fontSize: 12,
-                                        decoration: TextDecoration.lineThrough,
-                                      ),
+                                    const Row(
+                                      children: [
+                                        Text(
+                                          '\$0.99',
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          '\$2.99',
+                                          style: TextStyle(
+                                            color: Colors.red,
+                                            fontSize: 12,
+                                            decoration:
+                                                TextDecoration.lineThrough,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
-          ),
+          ],
         ),
       ],
     );

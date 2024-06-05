@@ -13,10 +13,12 @@ class CategoryModel {
 class OnSaleClassModel {
   final String onSaleItme;
   final String onSaleImagePath;
+  final double price;
 
   OnSaleClassModel({
     required this.onSaleImagePath,
     required this.onSaleItme,
+    required this.price,
   });
 }
 

@@ -23,4 +23,8 @@ class ImagePaths {
   static const String onSaleItem5 = 'assets/icons/onSale/hamburger.png';
   static const String onSaleItem6 = 'assets/icons/onSale/spicy-food.png';
   static const String onSaleItem7 = 'assets/icons/onSale/wheat-sack.png';
+
+//EMPTY CART BOX IMAGE
+
+  static const String emptyBoxImage = 'assets/images/empty-cart.png';
 }
