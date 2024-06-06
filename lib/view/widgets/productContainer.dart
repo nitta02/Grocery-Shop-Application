@@ -44,9 +44,7 @@ class ProductContainer extends StatelessWidget {
           children: [
             ClipRRect(
               child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.2),
-                ),
+                decoration: BoxDecoration(),
                 child: Image.asset(
                   imagePath,
                   height: 120,
@@ -55,44 +53,49 @@ class ProductContainer extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        productName,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.green.withOpacity(0.2),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          productName,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        "BDT ${price.toString()}",
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.red,
+                        const SizedBox(height: 5),
+                        Text(
+                          "BDT ${price.toString()}",
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green,
+                          ),
                         ),
+                      ],
+                    ),
+                    Container(
+                      height: 50,
+                      width: 40,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.green,
                       ),
-                    ],
-                  ),
-                  Container(
-                    height: 50,
-                    width: 40,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.green,
-                    ),
-                    child: const Icon(
-                      IconlyLight.buy,
-                      color: Colors.white,
-                    ),
-                  )
-                ],
+                      child: const Icon(
+                        IconlyLight.buy,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ],
