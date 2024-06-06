@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:grocery_shop_app/controller/utils/imagePath.dart';
 import 'package:grocery_shop_app/model/class/productModels.dart';
 

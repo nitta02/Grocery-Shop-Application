@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
               statusBarColor: Colors.transparent,
             ),
           ),
-          bottomAppBarTheme: BottomAppBarTheme(
+          bottomAppBarTheme: const BottomAppBarTheme(
             color: Colors.transparent,
           )),
       home: const MainScreen(),

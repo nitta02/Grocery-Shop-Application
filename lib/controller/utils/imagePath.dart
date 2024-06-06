@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 class ImagePaths {
   //SWIPER SHOWING IMAGE
   static const String swiperImg1 = 'assets/images/swiper/img5.png';

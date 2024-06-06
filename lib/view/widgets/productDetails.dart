@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -117,7 +119,7 @@ class ProductDetails extends StatelessWidget {
                             fontSize: 20,
                             fontColor: Colors.green,
                           ),
-                          Container(
+                          SizedBox(
                             height: 40,
                             width: 120,
                             child: Row(

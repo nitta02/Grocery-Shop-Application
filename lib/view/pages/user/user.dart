@@ -121,7 +121,6 @@ class _UserPageState extends State<UserPage> {
           maxLines: 3,
           onChanged: (value) {
             addressEditController.text = value;
-            print(value);
           },
         ),
         actions: [

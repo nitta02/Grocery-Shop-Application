@@ -1,8 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/model/class/productModels.dart';
 import 'package:grocery_shop_app/model/lists/allProducts.dart';
-import 'package:grocery_shop_app/view/widgets/customAppBar.dart';
 import 'package:grocery_shop_app/view/widgets/customText.dart';
 import 'package:grocery_shop_app/view/widgets/productContainer.dart';
 

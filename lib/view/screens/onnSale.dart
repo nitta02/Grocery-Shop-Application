@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, dead_code, file_names, no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
 import 'package:grocery_shop_app/controller/utils/imagePath.dart';
 import 'package:grocery_shop_app/model/class/productModels.dart';
