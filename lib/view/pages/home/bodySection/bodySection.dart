@@ -36,41 +36,50 @@ class BodySection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _cardSwiperSection(swiperImages),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text('Popular Category'),
-              TextButton(
-                onPressed: () {
-                  GlobalNavigator.navigateTo(
-                      context: context, routeName: AppRoutes.categoryScreen);
-                },
-                child: const Text('View All'),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 100,
-            child: ListView.builder(
-              itemCount: onSaleItems.length,
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CategoryContainer(
-                  categoryName: categoryModelList[index].categoryName,
-                  imagePath: categoryModelList[index].categoryImagePath,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
+          _popularCategorySection(context, onSaleItems),
           _onSaleSection(onSaleItems, context),
           _popularProductSection(allProducts, context),
         ],
       ),
+    );
+  }
+
+  Column _popularCategorySection(
+      BuildContext context, List<OnSaleClassModel> onSaleItems) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Popular Category'),
+            TextButton(
+              onPressed: () {
+                GlobalNavigator.navigateTo(
+                    context: context, routeName: AppRoutes.categoryScreen);
+              },
+              child: const Text('View All'),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 100,
+          child: ListView.builder(
+            itemCount: onSaleItems.length,
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CategoryContainer(
+                categoryName: categoryModelList[index].categoryName,
+                imagePath: categoryModelList[index].categoryImagePath,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+      ],
     );
   }
 

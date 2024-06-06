@@ -5,28 +5,33 @@ import 'package:grocery_shop_app/model/class/productModels.dart';
 
 List<AllProductsModel> allProductsItems = [
   AllProductsModel(
-    itemImagePath: ImagePaths.onSaleItem1,
+    itemImagePath: ImagePaths.item1,
     itmeName: "Apple",
     price: 10,
   ),
   AllProductsModel(
-    itemImagePath: ImagePaths.onSaleItem2,
+    itemImagePath: ImagePaths.item2,
     itmeName: "Water Melon",
     price: 10,
   ),
   AllProductsModel(
-    itemImagePath: ImagePaths.onSaleItem3,
+    itemImagePath: ImagePaths.item3,
     itmeName: "Passion Fruit",
     price: 10,
   ),
   AllProductsModel(
-    itemImagePath: ImagePaths.onSaleItem7,
-    itmeName: "Wheat-sack",
+    itemImagePath: ImagePaths.item5,
+    itmeName: "Hamburger",
     price: 10,
   ),
   AllProductsModel(
-    itemImagePath: ImagePaths.onSaleItem5,
-    itmeName: "Hamburger",
+    itemImagePath: ImagePaths.item6,
+    itmeName: "Food",
+    price: 10,
+  ),
+  AllProductsModel(
+    itemImagePath: ImagePaths.item7,
+    itmeName: "Wheat-sack",
     price: 10,
   ),
 ];

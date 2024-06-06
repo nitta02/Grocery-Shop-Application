@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/view/widgets/CommonListtile.dart';
+import 'package:grocery_shop_app/view/widgets/customText.dart';
+import 'package:grocery_shop_app/view/widgets/customTextFormField.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({super.key});
@@ -21,88 +23,124 @@ class _UserPageState extends State<UserPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 10,
-            horizontal: 10,
-          ),
-          child: Column(
-            children: [
-              ListTile(
-                title: RichText(
-                  text: const TextSpan(
-                      text: 'Hi,',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.green,
-                      ),
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+            ),
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+              color: Colors.green.shade400.withOpacity(0.5),
+            ),
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TextSpan(
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
+                        Row(
+                          children: [
+                            CustomText(
+                              text: "HI, ",
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontColor: Colors.green,
+                            ),
+                            CustomText(
+                              text: "Tonmoy",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                              fontColor: Colors.white,
+                            ),
+                          ],
+                        ),
+                        CustomText(
+                          text: "tonmoy@gmail.com",
+                          fontWeight: FontWeight.w500,
+                          fontSize: 15,
+                          fontColor: Colors.white,
+                        ),
+                      ],
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        height: 80,
+                        width: 35,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                        ),
+                        child: const Center(
+                          child: CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                'https://img.freepik.com/premium-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg'),
                           ),
-                          text: 'Tonmoy',
-                        )
-                      ]),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-                subtitle: const Text('tonmoy@gmail.com'),
-                trailing: const CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://img.freepik.com/premium-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg'),
-                ),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              CommonListTile(
+                title: 'Address',
+                subtitle: 'Address Details',
+                iconData: IconlyLight.arrowRight2,
+                onTap: () async {
+                  await _showAddressDetails(context);
+                },
               ),
-              const Divider(
-                color: Colors.green,
+              CommonListTile(
+                title: 'Orders',
+                iconData: IconlyLight.bag,
+                onTap: () {},
               ),
-              Column(
-                children: [
-                  CommonListTile(
-                    title: 'Address',
-                    subtitle: 'Address Details',
-                    iconData: IconlyLight.arrowRight2,
-                    onTap: () async {
-                      await _showAddressDetails(context);
-                    },
-                  ),
-                  CommonListTile(
-                    title: 'Orders',
-                    iconData: IconlyLight.bag,
-                    onTap: () {},
-                  ),
-                  CommonListTile(
-                    title: 'Wishlist',
-                    iconData: IconlyLight.heart,
-                    onTap: () {},
-                  ),
-                  CommonListTile(
-                    title: 'Viewed',
-                    iconData: IconlyLight.show,
-                    onTap: () {},
-                  ),
-                  CommonListTile(
-                    title: 'Theme Mode',
-                    iconData: IconlyLight.star,
-                    onTap: () {},
-                  ),
-                  CommonListTile(
-                    title: 'Forget Passowrd',
-                    iconData: IconlyLight.password,
-                    onTap: () {},
-                  ),
-                  CommonListTile(
-                    title: 'Sign Out',
-                    iconData: IconlyLight.logout,
-                    onTap: () async {
-                      _showSignOutDialog();
-                    },
-                  ),
-                ],
+              CommonListTile(
+                title: 'Wishlist',
+                iconData: IconlyLight.heart,
+                onTap: () {},
+              ),
+              CommonListTile(
+                title: 'Viewed',
+                iconData: IconlyLight.show,
+                onTap: () {},
+              ),
+              CommonListTile(
+                title: 'Theme Mode',
+                iconData: IconlyLight.star,
+                onTap: () {},
+              ),
+              CommonListTile(
+                title: 'Forget Passowrd',
+                iconData: IconlyLight.password,
+                onTap: () {},
+              ),
+              CommonListTile(
+                title: 'Sign Out',
+                iconData: IconlyLight.logout,
+                onTap: () async {
+                  _showSignOutDialog();
+                },
               ),
             ],
           ),
-        ),
+        ],
       ),
     );
   }

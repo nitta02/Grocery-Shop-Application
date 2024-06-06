@@ -5,6 +5,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/model/class/productModels.dart';
 import 'package:grocery_shop_app/model/lists/allProducts.dart';
 import 'package:grocery_shop_app/view/widgets/customText.dart';
+import 'package:grocery_shop_app/view/widgets/customTextFormField.dart';
 import 'package:grocery_shop_app/view/widgets/productContainer.dart';
 
 class AllProductScreen extends StatelessWidget {
@@ -22,8 +23,12 @@ class AllProductScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: 15,
               ),
-              height: 100,
+              height: 180,
               decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                ),
                 color: Colors.green.shade400.withOpacity(0.5),
               ),
               width: double.infinity,
@@ -77,6 +82,26 @@ class AllProductScreen extends StatelessWidget {
                       )
                     ],
                   ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 10,
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const CustomTextFormFeild(
+                        hintText: 'Search for products',
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w200,
+                          fontSize: 14,
+                          letterSpacing: 1.8,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -86,7 +111,7 @@ class AllProductScreen extends StatelessWidget {
                 childAspectRatio: 4 / 5,
                 crossAxisCount: 2,
                 crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
+                mainAxisSpacing: 10,
               ),
               itemCount: allProductItems.length,
               shrinkWrap: true,

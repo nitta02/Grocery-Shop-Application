@@ -29,4 +29,14 @@ class ImagePaths {
 //EMPTY CART BOX IMAGE
 
   static const String emptyBoxImage = 'assets/images/empty-cart.png';
+
+//ALL PRODUCT IMAGES
+
+  static const String item1 = 'assets/icons/onSale/001-apple.png';
+  static const String item2 = 'assets/icons/onSale/004-watermelon.png';
+  static const String item3 = 'assets/icons/onSale/006-passion-fruit.png';
+  static const String item4 = 'assets/icons/onSale/003-liquor.png';
+  static const String item5 = 'assets/icons/onSale/hamburger.png';
+  static const String item6 = 'assets/icons/onSale/spicy-food.png';
+  static const String item7 = 'assets/icons/onSale/wheat-sack.png';
 }
