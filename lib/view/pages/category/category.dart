@@ -20,7 +20,7 @@ class CatagoryPage extends StatelessWidget {
             ),
             height: 180,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
               ),
