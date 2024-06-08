@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grocery_shop_app/controller/provider/productProvider.dart';
 import 'package:grocery_shop_app/mainScreen.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
+import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 // This will always work for lock screen Orientation.
 Future<void> main() async {
@@ -17,19 +20,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          appBarTheme: const AppBarTheme(
-            systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: Colors.transparent,
-            ),
-          ),
-          bottomAppBarTheme: const BottomAppBarTheme(
-            color: Colors.transparent,
-          )),
-      home: const MainScreen(),
-      routes: AppRoutes.routes,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ProductProvider(),
+        ),
+      ],
+      child: Sizer(
+        builder: (context, orientation, deviceType) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+              appBarTheme: const AppBarTheme(
+                systemOverlayStyle: SystemUiOverlayStyle(
+                  statusBarColor: Colors.transparent,
+                ),
+              ),
+              bottomAppBarTheme: const BottomAppBarTheme(
+                color: Colors.transparent,
+              )),
+          home: const MainScreen(),
+          routes: AppRoutes.routes,
+        ),
+      ),
     );
   }
 }

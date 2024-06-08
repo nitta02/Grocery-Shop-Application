@@ -29,10 +29,12 @@ class AllProductsModel {
   final String itmeName;
   final String itemImagePath;
   final double price;
+  int quantity;
 
   AllProductsModel({
     required this.price,
     required this.itmeName,
     required this.itemImagePath,
+    this.quantity = 1,
   });
 }
