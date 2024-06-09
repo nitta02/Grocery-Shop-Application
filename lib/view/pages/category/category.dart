@@ -19,12 +19,12 @@ class CatagoryPage extends StatelessWidget {
               horizontal: 15,
             ),
             height: 180,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
               ),
-              color: Colors.green.shade400.withOpacity(0.5),
+              color: Colors.green,
             ),
             width: double.infinity,
             child: Column(

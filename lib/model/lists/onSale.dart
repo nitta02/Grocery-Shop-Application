@@ -3,30 +3,30 @@
 import 'package:grocery_shop_app/controller/utils/imagePath.dart';
 import 'package:grocery_shop_app/model/class/productModels.dart';
 
-List<OnSaleClassModel> onSaleItemList = [
-  OnSaleClassModel(
-    onSaleImagePath: ImagePaths.onSaleItem1,
-    onSaleItme: "Apple",
+List<ProductsModel> onSaleItemList = [
+  ProductsModel(
+    itemImagePath: ImagePaths.onSaleItem1,
+    itmeName: "Apple",
     price: 10,
   ),
-  OnSaleClassModel(
-    onSaleImagePath: ImagePaths.onSaleItem2,
-    onSaleItme: "Water Melon",
+  ProductsModel(
+    itemImagePath: ImagePaths.onSaleItem2,
+    itmeName: "Water Melon",
     price: 10,
   ),
-  OnSaleClassModel(
-    onSaleImagePath: ImagePaths.onSaleItem3,
-    onSaleItme: "Passion Fruit",
+  ProductsModel(
+    itemImagePath: ImagePaths.onSaleItem3,
+    itmeName: "Passion Fruit",
     price: 10,
   ),
-  OnSaleClassModel(
-    onSaleImagePath: ImagePaths.onSaleItem7,
-    onSaleItme: "Wheat-sack",
+  ProductsModel(
+    itemImagePath: ImagePaths.onSaleItem7,
+    itmeName: "Wheat-sack",
     price: 10,
   ),
-  OnSaleClassModel(
-    onSaleImagePath: ImagePaths.onSaleItem5,
-    onSaleItme: "Hamburger",
+  ProductsModel(
+    itemImagePath: ImagePaths.onSaleItem5,
+    itmeName: "Hamburger",
     price: 10,
   ),
 ];

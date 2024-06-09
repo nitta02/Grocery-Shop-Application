@@ -11,7 +11,7 @@ class AllProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<AllProductsModel> allProductItems = allProductsItems;
+    List<ProductsModel> allProductItems = allProductsItems;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -32,9 +32,7 @@ class AllProductScreen extends StatelessWidget {
               itemCount: allProductItems.length,
               shrinkWrap: true,
               itemBuilder: (context, index) => ProductContainer(
-                imagePath: allProductItems[index].itemImagePath,
-                productName: allProductItems[index].itmeName,
-                price: allProductItems[index].price,
+                productsModel: allProductItems[index],
               ),
             ),
           ],

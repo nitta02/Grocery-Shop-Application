@@ -2,17 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/view/widgets/productDetails.dart';
+import 'package:grocery_shop_app/model/class/productModels.dart';
+import 'package:grocery_shop_app/view/screens/productDetails.dart';
 
 class ProductContainer extends StatelessWidget {
-  final String imagePath;
-  final String productName;
-  final double price;
-  const ProductContainer(
-      {super.key,
-      required this.imagePath,
-      required this.productName,
-      required this.price});
+  final ProductsModel productsModel;
+  const ProductContainer({super.key, required this.productsModel});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +17,7 @@ class ProductContainer extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) => ProductDetails(
-                productName: productName,
-                imagePath: imagePath,
-                productPrice: price,
+                productModel: productsModel,
               ),
             ));
       },
@@ -48,7 +41,7 @@ class ProductContainer extends StatelessWidget {
               child: Container(
                 decoration: const BoxDecoration(),
                 child: Image.asset(
-                  imagePath,
+                  productsModel.itemImagePath,
                   height: 120,
                   width: double.infinity,
                   fit: BoxFit.fitHeight,
@@ -68,7 +61,7 @@ class ProductContainer extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          productName,
+                          productsModel.itmeName,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -76,7 +69,7 @@ class ProductContainer extends StatelessWidget {
                         ),
                         const SizedBox(height: 5),
                         Text(
-                          "BDT ${price.toString()}",
+                          "BDT ${productsModel.price.toString()}",
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.green,

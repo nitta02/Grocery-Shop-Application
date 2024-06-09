@@ -12,7 +12,7 @@ class OnSaleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<OnSaleClassModel> onSaleItems = onSaleItemList.sublist(0, 5);
+    List<ProductsModel> onSaleItems = onSaleItemList.sublist(0, 5);
     bool _cartEmpty = false;
 
     return Scaffold(
@@ -44,9 +44,7 @@ class OnSaleScreen extends StatelessWidget {
                     itemCount: onSaleItems.length,
                     shrinkWrap: true,
                     itemBuilder: (context, index) => ProductContainer(
-                      imagePath: onSaleItems[index].onSaleImagePath,
-                      productName: onSaleItems[index].onSaleItme,
-                      price: onSaleItems[index].price,
+                      productsModel: onSaleItems[index],
                     ),
                   ),
           ],

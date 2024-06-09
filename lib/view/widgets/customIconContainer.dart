@@ -26,9 +26,12 @@ class CustomIconContainer extends StatelessWidget {
           shape: BoxShape.circle,
           color: color,
         ),
-        child: Icon(
-          iconData,
-          color: iconColor,
+        child: Center(
+          child: Icon(
+            iconData,
+            color: iconColor,
+            size: 20,
+          ),
         ),
       ),
     );

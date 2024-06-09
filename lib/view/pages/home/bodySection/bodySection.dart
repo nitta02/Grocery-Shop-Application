@@ -11,6 +11,7 @@ import 'package:grocery_shop_app/model/lists/onSale.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:grocery_shop_app/routes/globalNavigator.dart';
 import 'package:grocery_shop_app/view/widgets/categoryContainer.dart';
+import 'package:grocery_shop_app/view/widgets/customText.dart';
 import 'package:grocery_shop_app/view/widgets/productContainer.dart';
 
 class BodySection extends StatelessWidget {
@@ -24,8 +25,8 @@ class BodySection extends StatelessWidget {
       ImagePaths.swiperImg3,
     ];
 
-    List<OnSaleClassModel> onSaleItems = onSaleItemList.sublist(0, 5);
-    List<AllProductsModel> allProducts = allProductsItems.sublist(0, 4);
+    List<ProductsModel> onSaleItems = onSaleItemList.sublist(0, 5);
+    List<ProductsModel> allProducts = allProductsItems.sublist(0, 4);
 
     return Padding(
       padding: const EdgeInsets.symmetric(
@@ -45,19 +46,29 @@ class BodySection extends StatelessWidget {
   }
 
   Column _popularCategorySection(
-      BuildContext context, List<OnSaleClassModel> onSaleItems) {
+      BuildContext context, List<ProductsModel> onSaleItems) {
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text('Popular Category'),
+            const CustomText(
+              text: 'POPULAR CATEGORY',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              fontColor: Colors.green,
+            ),
             TextButton(
               onPressed: () {
                 GlobalNavigator.navigateTo(
                     context: context, routeName: AppRoutes.categoryScreen);
               },
-              child: const Text('View All'),
+              child: const CustomText(
+                text: 'View All',
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                fontColor: Colors.black,
+              ),
             ),
           ],
         ),
@@ -84,19 +95,29 @@ class BodySection extends StatelessWidget {
   }
 
   Column _popularProductSection(
-      List<AllProductsModel> allProducts, BuildContext context) {
+      List<ProductsModel> allProducts, BuildContext context) {
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text('Popular Products'),
+            const CustomText(
+              text: 'POPULAR PRODUCTS',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              fontColor: Colors.green,
+            ),
             TextButton(
               onPressed: () {
                 GlobalNavigator.navigateTo(
                     context: context, routeName: AppRoutes.allProductScreen);
               },
-              child: const Text('View All'),
+              child: const CustomText(
+                text: 'View All',
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                fontColor: Colors.black,
+              ),
             ),
           ],
         ),
@@ -111,29 +132,36 @@ class BodySection extends StatelessWidget {
           itemCount: allProducts.length,
           shrinkWrap: true,
           itemBuilder: (context, index) => ProductContainer(
-            imagePath: allProducts[index].itemImagePath,
-            productName: allProducts[index].itmeName,
-            price: allProducts[index].price,
+            productsModel: allProducts[index],
           ),
         ),
       ],
     );
   }
 
-  Column _onSaleSection(
-      List<OnSaleClassModel> onSaleItems, BuildContext context) {
+  Column _onSaleSection(List<ProductsModel> onSaleItems, BuildContext context) {
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text('Product you Need'),
+            const CustomText(
+              text: 'POPULAR YOU NEED',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              fontColor: Colors.green,
+            ),
             TextButton(
               onPressed: () {
                 GlobalNavigator.navigateTo(
                     context: context, routeName: AppRoutes.onSaleScreen);
               },
-              child: const Text('View All'),
+              child: const CustomText(
+                text: 'View All',
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                fontColor: Colors.black,
+              ),
             ),
           ],
         ),
@@ -192,9 +220,9 @@ class BodySection extends StatelessWidget {
                                           image: DecorationImage(
                                               image: AssetImage(
                                                   onSaleItems[index]
-                                                      .onSaleImagePath))),
+                                                      .itemImagePath))),
                                     ),
-                                    Text(onSaleItems[index].onSaleItme),
+                                    Text(onSaleItems[index].itmeName),
                                   ],
                                 ),
                               ),

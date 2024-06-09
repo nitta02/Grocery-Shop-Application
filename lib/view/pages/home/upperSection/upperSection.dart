@@ -20,7 +20,7 @@ class UpperSection extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              'assets/images/img2.jpg',
+              'assets/images/img2.png',
             ),
             filterQuality: FilterQuality.high,
             fit: BoxFit.fill,
