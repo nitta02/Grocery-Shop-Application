@@ -54,6 +54,7 @@ flutter:
     - assets/images/swiper/
     - assets/icons/
     - assets/icons/categories/
+    - assets/icons/items/fruits/
     - assets/icons/onSale/
   #   - images/a_dot_ham.jpeg
 

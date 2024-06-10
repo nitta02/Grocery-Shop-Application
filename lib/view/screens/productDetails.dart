@@ -2,12 +2,12 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/controller/provider/productProvider.dart';
 import 'package:grocery_shop_app/model/class/productModels.dart';
-import 'package:grocery_shop_app/view/pages/cart/cart.dart';
+import 'package:grocery_shop_app/view/pages/home/home.dart';
 import 'package:grocery_shop_app/view/widgets/appBar/productAppBar.dart';
 import 'package:grocery_shop_app/view/widgets/containerButton.dart';
-import 'package:grocery_shop_app/view/widgets/customIconContainer.dart';
 import 'package:grocery_shop_app/view/widgets/customText.dart';
 import 'package:provider/provider.dart';
 
@@ -37,51 +37,21 @@ class ProductDetails extends StatelessWidget {
                       horizontal: 15,
                     ),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         CustomText(
-                          text: productModel.itmeName,
+                          text: productModel.itemName,
                           fontWeight: FontWeight.w400,
                           fontSize: 18,
                           fontColor: Colors.black,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            CustomText(
-                              text: "BDT ${productModel.price.toString()}",
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              fontColor: Colors.green,
-                            ),
-                            SizedBox(
-                              height: 40,
-                              width: 120,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  CustomIconContainer(
-                                      onTap: () {
-                                        value.decreaseQuantity(productModel);
-                                      },
-                                      color: Colors.grey,
-                                      iconData: CupertinoIcons.minus,
-                                      iconColor: Colors.white),
-                                  Text(productModel.quantity.toString()),
-                                  CustomIconContainer(
-                                      onTap: () {
-                                        value.increaseQuantity(productModel);
-                                      },
-                                      color: Colors.green,
-                                      iconData: CupertinoIcons.add,
-                                      iconColor: Colors.white)
-                                ],
-                              ),
-                            ),
-                          ],
-                        )
+                        CustomText(
+                          text: "BDT ${productModel.price.toString()}/Kg",
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontColor: Colors.green,
+                        ),
                       ],
                     ),
                   ),
@@ -101,29 +71,38 @@ class ProductDetails extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Expanded(
-                    //   child: Column(
-                    //     mainAxisAlignment: MainAxisAlignment.center,
-                    //     crossAxisAlignment: CrossAxisAlignment.start,
-                    //     children: [
-                    //       const Text(
-                    //         'Total Price',
-                    //         style: TextStyle(
-                    //           fontSize: 14,
-                    //           fontWeight: FontWeight.w200,
-                    //         ),
-                    //       ),
-                    //       Text(
-                    //         '${value.productTotalPrice} BDT',
-                    //         style: const TextStyle(
-                    //           fontSize: 20,
-                    //           fontWeight: FontWeight.bold,
-                    //           color: Colors.green,
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomePage(),
+                                ),
+                                (route) => false,
+                              );
+                            },
+                            icon: const Icon(
+                              IconlyLight.home,
+                              color: Colors.green,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              IconlyLight.heart,
+                              color: Colors.green,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
                     Expanded(
                       child: CustomContainerButton(
                         onTap: () {
@@ -139,15 +118,9 @@ class ProductDetails extends StatelessWidget {
                     ),
                     Expanded(
                       child: CustomContainerButton(
-                        onTap: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const CartPage(),
-                              ));
-                        },
+                        onTap: () {},
                         continerColor: Colors.green,
-                        text: "View Cart",
+                        text: "Buy Now",
                         textColor: Colors.white,
                       ),
                     ),

@@ -61,7 +61,7 @@ class ProductContainer extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          productsModel.itmeName,
+                          productsModel.itemName,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,

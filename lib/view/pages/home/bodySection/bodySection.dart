@@ -37,60 +37,10 @@ class BodySection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _cardSwiperSection(swiperImages),
-          _popularCategorySection(context, onSaleItems),
           _onSaleSection(onSaleItems, context),
           _popularProductSection(allProducts, context),
         ],
       ),
-    );
-  }
-
-  Column _popularCategorySection(
-      BuildContext context, List<ProductsModel> onSaleItems) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const CustomText(
-              text: 'POPULAR CATEGORY',
-              fontWeight: FontWeight.w400,
-              fontSize: 16,
-              fontColor: Colors.green,
-            ),
-            TextButton(
-              onPressed: () {
-                GlobalNavigator.navigateTo(
-                    context: context, routeName: AppRoutes.categoryScreen);
-              },
-              child: const CustomText(
-                text: 'View All',
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                fontColor: Colors.black,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 100,
-          child: ListView.builder(
-            itemCount: onSaleItems.length,
-            shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CategoryContainer(
-                categoryName: categoryModelList[index].categoryName,
-                imagePath: categoryModelList[index].categoryImagePath,
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-      ],
     );
   }
 
@@ -222,7 +172,7 @@ class BodySection extends StatelessWidget {
                                                   onSaleItems[index]
                                                       .itemImagePath))),
                                     ),
-                                    Text(onSaleItems[index].itmeName),
+                                    Text(onSaleItems[index].itemName),
                                   ],
                                 ),
                               ),
