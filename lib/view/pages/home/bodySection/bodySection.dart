@@ -51,9 +51,9 @@ class BodySection extends StatelessWidget {
           children: [
             const CustomText(
               text: 'POPULAR PRODUCTS',
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.bold,
               fontSize: 16,
-              fontColor: Colors.green,
+              fontColor: Colors.black,
             ),
             TextButton(
               onPressed: () {
@@ -64,7 +64,7 @@ class BodySection extends StatelessWidget {
                 text: 'View All',
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
-                fontColor: Colors.black,
+                fontColor: Colors.green,
               ),
             ),
           ],
@@ -95,9 +95,9 @@ class BodySection extends StatelessWidget {
           children: [
             const CustomText(
               text: 'POPULAR YOU NEED',
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.bold,
               fontSize: 16,
-              fontColor: Colors.green,
+              fontColor: Colors.black,
             ),
             TextButton(
               onPressed: () {
@@ -108,7 +108,7 @@ class BodySection extends StatelessWidget {
                 text: 'View All',
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
-                fontColor: Colors.black,
+                fontColor: Colors.green,
               ),
             ),
           ],
@@ -252,6 +252,7 @@ class BodySection extends StatelessWidget {
       child: Card(
         child: Swiper(
           allowImplicitScrolling: true,
+          autoplay: true,
           containerHeight: 100,
           containerWidth: 100,
           itemBuilder: (BuildContext context, int index) {
