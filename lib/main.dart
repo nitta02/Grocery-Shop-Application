@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grocery_shop_app/controller/provider/productProvider.dart';
+import 'package:grocery_shop_app/controller/provider/wishListProivder.dart';
 import 'package:grocery_shop_app/mainScreen.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => ProductProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => WishlistProvider(),
         ),
       ],
       child: Sizer(

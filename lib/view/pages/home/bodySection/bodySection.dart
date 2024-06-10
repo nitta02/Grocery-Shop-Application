@@ -6,11 +6,9 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/controller/utils/imagePath.dart';
 import 'package:grocery_shop_app/model/class/productModels.dart';
 import 'package:grocery_shop_app/model/lists/allProducts.dart';
-import 'package:grocery_shop_app/model/lists/categroyLists.dart';
 import 'package:grocery_shop_app/model/lists/onSale.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:grocery_shop_app/routes/globalNavigator.dart';
-import 'package:grocery_shop_app/view/widgets/categoryContainer.dart';
 import 'package:grocery_shop_app/view/widgets/customText.dart';
 import 'package:grocery_shop_app/view/widgets/productContainer.dart';
 

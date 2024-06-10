@@ -1,15 +1,10 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/view/widgets/customText.dart';
 
-class ProductAppBar extends StatelessWidget {
-  final String imagePath;
-  const ProductAppBar({
-    super.key,
-    required this.imagePath,
-  });
+class AppBarCustom extends StatelessWidget {
+  final String text;
+  const AppBarCustom({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +12,13 @@ class ProductAppBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
         horizontal: 15,
       ),
-      height: 250,
-      decoration: BoxDecoration(
-        color: Colors.green.shade400.withOpacity(0.5),
+      height: 180,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(15),
+          bottomRight: Radius.circular(15),
+        ),
+        color: Colors.green,
       ),
       width: double.infinity,
       child: Column(
@@ -49,8 +48,8 @@ class ProductAppBar extends StatelessWidget {
                   ),
                 ),
               ),
-              const CustomText(
-                text: "DETAILS",
+              CustomText(
+                text: text,
                 fontWeight: FontWeight.w500,
                 fontSize: 20,
                 fontColor: Colors.white,
@@ -71,10 +70,6 @@ class ProductAppBar extends StatelessWidget {
                 ),
               )
             ],
-          ),
-          Image.asset(
-            imagePath,
-            height: 150,
           ),
         ],
       ),

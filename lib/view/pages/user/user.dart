@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:grocery_shop_app/routes/appRoutes.dart';
+import 'package:grocery_shop_app/routes/globalNavigator.dart';
 import 'package:grocery_shop_app/view/widgets/CommonListtile.dart';
 import 'package:grocery_shop_app/view/widgets/customText.dart';
 
@@ -50,7 +52,12 @@ class _UserPageState extends State<UserPage> {
         CommonListTile(
           title: 'Wishlist',
           iconData: IconlyLight.heart,
-          onTap: () {},
+          onTap: () {
+            GlobalNavigator.navigateTo(
+              context: context,
+              routeName: AppRoutes.wishListScreen,
+            );
+          },
         ),
         CommonListTile(
           title: 'Viewed',
