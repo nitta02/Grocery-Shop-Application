@@ -47,7 +47,12 @@ class _UserPageState extends State<UserPage> {
         CommonListTile(
           title: 'Orders',
           iconData: IconlyLight.bag,
-          onTap: () {},
+          onTap: () {
+            GlobalNavigator.navigateTo(
+              context: context,
+              routeName: AppRoutes.orderScreen,
+            );
+          },
         ),
         CommonListTile(
           title: 'Wishlist',
@@ -62,7 +67,12 @@ class _UserPageState extends State<UserPage> {
         CommonListTile(
           title: 'Viewed',
           iconData: IconlyLight.show,
-          onTap: () {},
+          onTap: () {
+            GlobalNavigator.navigateTo(
+              context: context,
+              routeName: AppRoutes.viewedScreen,
+            );
+          },
         ),
         CommonListTile(
           title: 'Theme Mode',
