@@ -22,70 +22,80 @@ class CartPage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Expanded(
-              child: ListView.builder(
-                  itemCount: value.cartItem.length,
-                  itemBuilder: (context, index) {
-                    final items = value.cartItem[index];
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Image.asset(
-                            items.itemImagePath,
-                            height: 80,
-                          ),
-                          Column(
-                            children: [
-                              CustomText(
-                                text: items.itmeName,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                fontColor: Colors.green,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SizedBox(
-                                    height: 40,
-                                    width: 120,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        CustomIconContainer(
-                                            onTap: () {},
-                                            color: Colors.grey,
-                                            iconData: CupertinoIcons.minus,
-                                            iconColor: Colors.white),
-                                        Text(items.quantity.toString()),
-                                        CustomIconContainer(
-                                            onTap: () {},
-                                            color: Colors.green,
-                                            iconData: CupertinoIcons.add,
-                                            iconColor: Colors.white)
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          CustomIconContainer(
-                              onTap: () {
-                                value.removeItem(items);
-                              },
-                              color: Colors.red,
-                              iconData: CupertinoIcons.delete,
-                              iconColor: Colors.white)
-                        ],
-                      ),
-                    );
-                  }),
-            ),
+            // Expanded(
+            //   child: ListView.builder(
+            //       itemCount: value.cartItem.length,
+            //       itemBuilder: (context, index) {
+            //         if (value..isNotEmpty) {
+            //           final items = value.cartItem[index];
+            //           return Padding(
+            //             padding: const EdgeInsets.all(8.0),
+            //             child: Row(
+            //               crossAxisAlignment: CrossAxisAlignment.start,
+            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //               children: [
+            //                 Image.asset(
+            //                   items.itemImagePath,
+            //                   height: 80,
+            //                 ),
+            //                 Column(
+            //                   children: [
+            //                     CustomText(
+            //                       text: items.itemName,
+            //                       fontWeight: FontWeight.bold,
+            //                       fontSize: 20,
+            //                       fontColor: Colors.green,
+            //                     ),
+            //                     Row(
+            //                       mainAxisAlignment:
+            //                           MainAxisAlignment.spaceBetween,
+            //                       children: [
+            //                         SizedBox(
+            //                           height: 40,
+            //                           width: 120,
+            //                           child: Row(
+            //                             mainAxisAlignment:
+            //                                 MainAxisAlignment.spaceBetween,
+            //                             children: [
+            //                               CustomIconContainer(
+            //                                   onTap: () {
+            //                                     value.decreaseQuantity(items);
+            //                                   },
+            //                                   color: Colors.grey,
+            //                                   iconData: CupertinoIcons.minus,
+            //                                   iconColor: Colors.white),
+            //                               Text(items.quantity.toString()),
+            //                               CustomIconContainer(
+            //                                   onTap: () {
+            //                                     value.increaseQuantity(items);
+            //                                   },
+            //                                   color: Colors.green,
+            //                                   iconData: CupertinoIcons.add,
+            //                                   iconColor: Colors.white)
+            //                             ],
+            //                           ),
+            //                         ),
+            //                       ],
+            //                     )
+            //                   ],
+            //                 ),
+            //                 CustomIconContainer(
+            //                     onTap: () {
+            //                       value.removeItem(items);
+            //                     },
+            //                     color: Colors.red,
+            //                     iconData: CupertinoIcons.delete,
+            //                     iconColor: Colors.white)
+            //               ],
+            //             ),
+            //           );
+            //         } else {
+            //           return const Center(
+            //             child: Text('Please add Items'),
+            //           );
+            //         }
+            //       }),
+            // ),
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Container(
@@ -97,7 +107,7 @@ class CartPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
@@ -105,25 +115,29 @@ class CartPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Total Price',
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w200,
                             ),
                           ),
-                          Text(
-                            '00 BDT',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green,
-                            ),
+                          Consumer<ProductProvider>(
+                            builder: (context, value, child) {
+                              return Text(
+                                '${value.totalPrice.toStringAsFixed(2)} BDT',
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green,
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
                     ),
-                    Expanded(
+                    const Expanded(
                       child: CustomContainerButton(
                         continerColor: Colors.green,
                         text: "Pay Now",
