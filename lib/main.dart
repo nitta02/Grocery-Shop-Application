@@ -4,6 +4,7 @@ import 'package:grocery_shop_app/controller/provider/productProvider.dart';
 import 'package:grocery_shop_app/controller/provider/wishListProivder.dart';
 import 'package:grocery_shop_app/mainScreen.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
+import 'package:grocery_shop_app/view/screens/auth/signIn.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
               bottomAppBarTheme: const BottomAppBarTheme(
                 color: Colors.transparent,
               )),
-          home: const MainScreen(),
+          home: const SignInScreen(),
           routes: AppRoutes.routes,
         ),
       ),
