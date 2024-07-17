@@ -22,7 +22,7 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wishlistProvider = Provider.of<WishlistProvider>(context);
-    final value = Provider.of<ProductProvider>(context);
+    final value = Provider.of<ProductProvider>(context, listen: false);
 
     return Scaffold(
       body: Column(

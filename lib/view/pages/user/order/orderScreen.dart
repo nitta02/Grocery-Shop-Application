@@ -15,9 +15,9 @@ class OrderScreen extends StatelessWidget {
           children: [
             AppBarCustom(text: 'ORDERS'),
             ListView.builder(
-              itemCount: value.cartItem.length,
+              itemCount: value.cartItems.length,
               itemBuilder: (context, index) => ProductContainer(
-                productsModel: value.cartItem[index],
+                productsModel: value.cartItems[index],
               ),
             )
           ],

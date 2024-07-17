@@ -22,80 +22,80 @@ class CartPage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            // Expanded(
-            //   child: ListView.builder(
-            //       itemCount: value.cartItem.length,
-            //       itemBuilder: (context, index) {
-            //         if (value..isNotEmpty) {
-            //           final items = value.cartItem[index];
-            //           return Padding(
-            //             padding: const EdgeInsets.all(8.0),
-            //             child: Row(
-            //               crossAxisAlignment: CrossAxisAlignment.start,
-            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //               children: [
-            //                 Image.asset(
-            //                   items.itemImagePath,
-            //                   height: 80,
-            //                 ),
-            //                 Column(
-            //                   children: [
-            //                     CustomText(
-            //                       text: items.itemName,
-            //                       fontWeight: FontWeight.bold,
-            //                       fontSize: 20,
-            //                       fontColor: Colors.green,
-            //                     ),
-            //                     Row(
-            //                       mainAxisAlignment:
-            //                           MainAxisAlignment.spaceBetween,
-            //                       children: [
-            //                         SizedBox(
-            //                           height: 40,
-            //                           width: 120,
-            //                           child: Row(
-            //                             mainAxisAlignment:
-            //                                 MainAxisAlignment.spaceBetween,
-            //                             children: [
-            //                               CustomIconContainer(
-            //                                   onTap: () {
-            //                                     value.decreaseQuantity(items);
-            //                                   },
-            //                                   color: Colors.grey,
-            //                                   iconData: CupertinoIcons.minus,
-            //                                   iconColor: Colors.white),
-            //                               Text(items.quantity.toString()),
-            //                               CustomIconContainer(
-            //                                   onTap: () {
-            //                                     value.increaseQuantity(items);
-            //                                   },
-            //                                   color: Colors.green,
-            //                                   iconData: CupertinoIcons.add,
-            //                                   iconColor: Colors.white)
-            //                             ],
-            //                           ),
-            //                         ),
-            //                       ],
-            //                     )
-            //                   ],
-            //                 ),
-            //                 CustomIconContainer(
-            //                     onTap: () {
-            //                       value.removeItem(items);
-            //                     },
-            //                     color: Colors.red,
-            //                     iconData: CupertinoIcons.delete,
-            //                     iconColor: Colors.white)
-            //               ],
-            //             ),
-            //           );
-            //         } else {
-            //           return const Center(
-            //             child: Text('Please add Items'),
-            //           );
-            //         }
-            //       }),
-            // ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: value.cartItems.length,
+                  itemBuilder: (context, index) {
+                    if (value.cartItems.isNotEmpty) {
+                      final items = value.cartItems[index];
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset(
+                              items.itemImagePath,
+                              height: 80,
+                            ),
+                            Column(
+                              children: [
+                                CustomText(
+                                  text: items.itemName,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  fontColor: Colors.green,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    SizedBox(
+                                      height: 40,
+                                      width: 120,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          CustomIconContainer(
+                                              onTap: () {
+                                                value.decreaseQuantity(items);
+                                              },
+                                              color: Colors.grey,
+                                              iconData: CupertinoIcons.minus,
+                                              iconColor: Colors.white),
+                                          Text(items.quantity.toString()),
+                                          CustomIconContainer(
+                                              onTap: () {
+                                                value.increaseQuantity(items);
+                                              },
+                                              color: Colors.green,
+                                              iconData: CupertinoIcons.add,
+                                              iconColor: Colors.white)
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            CustomIconContainer(
+                                onTap: () {
+                                  value.removeItem(items);
+                                },
+                                color: Colors.red,
+                                iconData: CupertinoIcons.delete,
+                                iconColor: Colors.white)
+                          ],
+                        ),
+                      );
+                    } else {
+                      return const Center(
+                        child: Text('Please add Items'),
+                      );
+                    }
+                  }),
+            ),
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Container(

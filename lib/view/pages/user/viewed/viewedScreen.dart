@@ -15,9 +15,9 @@ class ViewedScreen extends StatelessWidget {
           children: [
             const AppBarCustom(text: 'VIEWED'),
             ListView.builder(
-              itemCount: value.cartItem.length,
+              itemCount: value.cartItems.length,
               itemBuilder: (context, index) => ProductContainer(
-                productsModel: value.cartItem[index],
+                productsModel: value.cartItems[index],
               ),
             )
           ],
