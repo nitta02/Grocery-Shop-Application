@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/view/pages/cart/cart.dart';
-import 'package:grocery_shop_app/view/pages/category/category.dart';
-import 'package:grocery_shop_app/view/pages/home/home.dart';
-import 'package:grocery_shop_app/view/pages/user/user.dart';
+import 'package:grocery_shop_app/presentation/pages/cart/cart.dart';
+import 'package:grocery_shop_app/presentation/pages/category/category.dart';
+import 'package:grocery_shop_app/presentation/pages/home/home.dart';
+import 'package:grocery_shop_app/presentation/pages/user/user.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
