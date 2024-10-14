@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/presentation/pages/home/bodySection/bodySection.dart';
 import 'package:grocery_shop_app/presentation/widgets/customTextFormField.dart';
 
@@ -58,7 +59,9 @@ class HomePage extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const CustomTextFormFeild(
+                      child: CustomTextFormFeild(
+                        iconData: IconlyLight.search,
+                        color: Colors.green,
                         hintText: 'Search for products',
                         hintStyle: TextStyle(
                           fontWeight: FontWeight.w200,

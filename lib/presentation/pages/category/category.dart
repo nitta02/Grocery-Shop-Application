@@ -70,7 +70,7 @@ class CatagoryPage extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const CustomTextFormFeild(
+                    child: CustomTextFormFeild(
                       hintText: 'Search for products',
                       hintStyle: TextStyle(
                         fontWeight: FontWeight.w200,
