@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/core/controller/provider/productProvider.dart';
+import 'package:grocery_shop_app/core/provider/productProvider.dart';
 import 'package:grocery_shop_app/presentation/widgets/appBar/globalAppBar.dart';
 import 'package:grocery_shop_app/presentation/widgets/containerButton.dart';
 import 'package:grocery_shop_app/presentation/widgets/customIconContainer.dart';

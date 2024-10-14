@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_shop_app/core/controller/provider/productProvider.dart';
-import 'package:grocery_shop_app/core/controller/provider/wishListProivder.dart';
+import 'package:grocery_shop_app/core/provider/productProvider.dart';
+import 'package:grocery_shop_app/core/provider/screenProvider.dart';
+import 'package:grocery_shop_app/core/provider/wishListProivder.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:grocery_shop_app/presentation/screens/auth/signIn.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +29,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => WishlistProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Screenprovider(),
         ),
       ],
       child: Sizer(

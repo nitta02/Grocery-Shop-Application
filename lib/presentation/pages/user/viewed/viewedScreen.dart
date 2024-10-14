@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/core/controller/provider/productProvider.dart';
+import 'package:grocery_shop_app/core/provider/productProvider.dart';
 import 'package:grocery_shop_app/presentation/widgets/appBar/appBar.dart';
 import 'package:grocery_shop_app/presentation/widgets/productContainer.dart';
 import 'package:provider/provider.dart';

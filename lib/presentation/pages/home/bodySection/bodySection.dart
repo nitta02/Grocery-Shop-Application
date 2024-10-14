@@ -3,7 +3,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/core/controller/utils/imagePath.dart';
+import 'package:grocery_shop_app/core/utils/imagePath.dart';
 import 'package:grocery_shop_app/core/model/class/productModels.dart';
 import 'package:grocery_shop_app/core/model/lists/allProducts.dart';
 import 'package:grocery_shop_app/core/model/lists/onSale.dart';

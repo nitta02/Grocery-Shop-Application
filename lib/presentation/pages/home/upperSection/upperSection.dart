@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/presentation/widgets/customTextFormField.dart';
 
 class UpperSection extends StatelessWidget {
@@ -18,34 +17,38 @@ class UpperSection extends StatelessWidget {
         horizontal: 10,
       ),
       decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/images/img2.png',
-            ),
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.fill,
-          ),
-          color: Colors.green,
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(15),
-            bottomLeft: Radius.circular(15),
-          )),
+        color: Colors.amber,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const SizedBox(
             height: 2,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const CircleAvatar(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Welcome',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  Text('Tanmoy Sarker',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      )),
+                ],
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.amber,
                 backgroundImage: NetworkImage(
                     'https://img.freepik.com/premium-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg'),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(IconlyLight.bag),
               ),
             ],
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/core/controller/utils/color.dart';
+import 'package:grocery_shop_app/core/utils/color.dart';
 import 'package:grocery_shop_app/presentation/screens/auth/signIn.dart';
 
 class RegisterScreen extends StatefulWidget {
