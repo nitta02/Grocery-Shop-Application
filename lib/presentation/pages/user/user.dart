@@ -79,11 +79,15 @@ class _UserPageState extends State<UserPage> {
         ),
         CommonListTile(
           title: 'Theme Mode',
-          trailing: CupertinoSwitch(
-            value: Provider.of<Themeprovider>(context, listen: false).isDark,
-            onChanged: (value) {
-              Provider.of<Themeprovider>(context, listen: false).setTheme();
-            },
+          trailing: Consumer<Themeprovider>(
+            builder: (context, themeProvider, child) => CupertinoSwitch(
+              value: themeProvider
+                  .isDark, // Dynamically switch based on the provider's state
+              onChanged: (value) {
+                themeProvider
+                    .setTheme(); // Update the theme when the switch is toggled
+              },
+            ),
           ),
         ),
         CommonListTile(
