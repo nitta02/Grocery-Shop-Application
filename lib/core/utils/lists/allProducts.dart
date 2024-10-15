@@ -1,5 +1,5 @@
 import 'package:grocery_shop_app/core/utils/imagePath.dart';
-import 'package:grocery_shop_app/core/model/class/productModels.dart';
+import 'package:grocery_shop_app/core/model/productModels.dart';
 
 List<ProductsModel> allProductsItems = [
   ProductsModel(

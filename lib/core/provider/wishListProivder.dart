@@ -1,7 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/core/model/class/productModels.dart';
+import 'package:grocery_shop_app/core/model/productModels.dart';
 
 class WishlistProvider extends ChangeNotifier {
   List<ProductsModel> _wishlist = [];

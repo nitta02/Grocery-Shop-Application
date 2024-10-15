@@ -18,66 +18,70 @@ class HomePage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const SizedBox(
-                      height: 2,
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Welcome',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
-                            Text('Tanmoy Sarker',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                          ],
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Colors.amber,
-                          backgroundImage: NetworkImage(
-                              'https://img.freepik.com/premium-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg'),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: CustomTextFormFeild(
-                        iconData: IconlyLight.search,
-                        color: Colors.green,
-                        hintText: 'Search for products',
-                        hintStyle: TextStyle(
-                          fontWeight: FontWeight.w200,
-                          fontSize: 14,
-                          letterSpacing: 1.8,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                _uperSection(),
                 const BodySection(),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Column _uperSection() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const SizedBox(
+          height: 2,
+        ),
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Welcome',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+                Text('Tanmoy Sarker',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ],
+            ),
+            CircleAvatar(
+              backgroundColor: Colors.amber,
+              backgroundImage: NetworkImage(
+                  'https://img.freepik.com/premium-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg'),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: CustomTextFormFeild(
+            iconData: IconlyLight.search,
+            color: Colors.green,
+            hintText: 'Search for products',
+            hintStyle: const TextStyle(
+              fontWeight: FontWeight.w200,
+              fontSize: 14,
+              letterSpacing: 1.8,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

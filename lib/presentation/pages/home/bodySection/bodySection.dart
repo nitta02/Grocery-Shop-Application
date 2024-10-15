@@ -3,10 +3,11 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:grocery_shop_app/core/utils/lists/categroyLists.dart';
 import 'package:grocery_shop_app/core/utils/imagePath.dart';
-import 'package:grocery_shop_app/core/model/class/productModels.dart';
-import 'package:grocery_shop_app/core/model/lists/allProducts.dart';
-import 'package:grocery_shop_app/core/model/lists/onSale.dart';
+import 'package:grocery_shop_app/core/model/productModels.dart';
+import 'package:grocery_shop_app/core/utils/lists/allProducts.dart';
+import 'package:grocery_shop_app/core/utils/lists/onSale.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:grocery_shop_app/routes/globalNavigator.dart';
 import 'package:grocery_shop_app/presentation/widgets/customText.dart';
@@ -35,10 +36,103 @@ class BodySection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _cardSwiperSection(swiperImages),
+          _categoryView(),
           _onSaleSection(onSaleItems, context),
           _popularProductSection(allProducts, context),
         ],
       ),
+    );
+  }
+
+  Column _categoryView() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(
+          height: 15,
+        ),
+        const CustomText(
+          text: 'CATEGORY',
+          fontWeight: FontWeight.bold,
+          fontSize: 16,
+          fontColor: Colors.black,
+        ),
+        SizedBox(
+          height: 100, // Adjust this value based on your design
+          child: ListView.builder(
+            itemCount: 6, // 5 categories + 1 "View All"
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              if (index < 5) {
+                // Category item
+                return Container(
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: 10), // Spacing between items
+                  child: Column(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center, // Center vertically
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage(
+                              categoryModelList[index].categoryImagePath,
+                            ),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                          height: 5), // Spacing between image and text
+                      Text(categoryModelList[index].categoryName),
+                    ],
+                  ),
+                );
+              } else {
+                // "View All" button
+                return GestureDetector(
+                  onTap: () {
+                    GlobalNavigator.navigateTo(
+                        context: context, routeName: AppRoutes.categoryScreen);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 10), // Spacing to match category items
+                    child: Column(
+                      mainAxisAlignment:
+                          MainAxisAlignment.center, // Center vertically
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.greenAccent,
+                              width: 2,
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.arrow_forward,
+                            color: Colors.greenAccent,
+                          ),
+                        ),
+                        const SizedBox(
+                            height: 5), // Spacing between icon and text
+                        const Text('View All'),
+                      ],
+                    ),
+                  ),
+                );
+              }
+            },
+          ),
+        ),
+      ],
     );
   }
 

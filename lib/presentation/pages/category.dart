@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/core/model/lists/categroyLists.dart';
+import 'package:grocery_shop_app/core/utils/lists/categroyLists.dart';
 import 'package:grocery_shop_app/presentation/widgets/categoryContainer.dart';
 import 'package:grocery_shop_app/presentation/widgets/customText.dart';
 import 'package:grocery_shop_app/presentation/widgets/customTextFormField.dart';

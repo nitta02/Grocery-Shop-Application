@@ -1,8 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:grocery_shop_app/core/utils/imagePath.dart';
-import 'package:grocery_shop_app/core/model/class/categoryClass.dart';
-import 'package:grocery_shop_app/core/model/class/productModels.dart';
+import 'package:grocery_shop_app/core/model/categoryClass.dart';
+import 'package:grocery_shop_app/core/model/productModels.dart';
 
 List<CategoryModel> categoryModelList = [
   CategoryModel(

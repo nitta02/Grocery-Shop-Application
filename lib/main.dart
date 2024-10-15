@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grocery_shop_app/core/provider/productProvider.dart';
 import 'package:grocery_shop_app/core/provider/screenProvider.dart';
+import 'package:grocery_shop_app/core/provider/themeProvider.dart';
 import 'package:grocery_shop_app/core/provider/wishListProivder.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:grocery_shop_app/presentation/screens/auth/signIn.dart';
@@ -33,19 +34,14 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => Screenprovider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => Themeprovider(),
+        ),
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) => MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-              appBarTheme: const AppBarTheme(
-                systemOverlayStyle: SystemUiOverlayStyle(
-                  statusBarColor: Colors.transparent,
-                ),
-              ),
-              bottomAppBarTheme: const BottomAppBarTheme(
-                color: Colors.transparent,
-              )),
+          theme: Provider.of<Themeprovider>(context).themeData,
           home: const SignInScreen(),
           routes: AppRoutes.routes,
         ),

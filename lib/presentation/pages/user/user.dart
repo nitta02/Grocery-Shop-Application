@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:grocery_shop_app/core/provider/themeProvider.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:grocery_shop_app/routes/globalNavigator.dart';
 import 'package:grocery_shop_app/presentation/widgets/CommonListtile.dart';
 import 'package:grocery_shop_app/presentation/widgets/customText.dart';
+import 'package:provider/provider.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({super.key});
@@ -39,14 +42,14 @@ class _UserPageState extends State<UserPage> {
         CommonListTile(
           title: 'Address',
           subtitle: 'Address Details',
-          iconData: IconlyLight.arrowRight2,
+          trailing: Icon(IconlyLight.arrowRight2),
           onTap: () async {
             await _showAddressDetails(context);
           },
         ),
         CommonListTile(
           title: 'Orders',
-          iconData: IconlyLight.bag,
+          trailing: Icon(IconlyLight.bag),
           onTap: () {
             GlobalNavigator.navigateTo(
               context: context,
@@ -56,7 +59,7 @@ class _UserPageState extends State<UserPage> {
         ),
         CommonListTile(
           title: 'Wishlist',
-          iconData: IconlyLight.heart,
+          trailing: Icon(IconlyLight.heart),
           onTap: () {
             GlobalNavigator.navigateTo(
               context: context,
@@ -66,7 +69,7 @@ class _UserPageState extends State<UserPage> {
         ),
         CommonListTile(
           title: 'Viewed',
-          iconData: IconlyLight.show,
+          trailing: Icon(IconlyLight.show),
           onTap: () {
             GlobalNavigator.navigateTo(
               context: context,
@@ -76,17 +79,21 @@ class _UserPageState extends State<UserPage> {
         ),
         CommonListTile(
           title: 'Theme Mode',
-          iconData: IconlyLight.star,
-          onTap: () {},
+          trailing: CupertinoSwitch(
+            value: Provider.of<Themeprovider>(context, listen: false).isDark,
+            onChanged: (value) {
+              Provider.of<Themeprovider>(context, listen: false).setTheme();
+            },
+          ),
         ),
         CommonListTile(
           title: 'Forget Passowrd',
-          iconData: IconlyLight.password,
+          trailing: Icon(IconlyLight.password),
           onTap: () {},
         ),
         CommonListTile(
           title: 'Sign Out',
-          iconData: IconlyLight.logout,
+          trailing: Icon(IconlyLight.logout),
           onTap: () async {
             _showSignOutDialog();
           },

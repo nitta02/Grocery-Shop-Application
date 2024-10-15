@@ -1,17 +1,17 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
 
 class CommonListTile extends StatelessWidget {
   final String title;
   final String? subtitle;
-  final IconData? iconData;
+  Widget? trailing;
+  Function()? onTap;
 
-  final Function()? onTap;
-  const CommonListTile({
+  CommonListTile({
     super.key,
     required this.title,
-    this.iconData,
+    this.trailing,
     this.onTap,
     this.subtitle,
   });
@@ -19,7 +19,7 @@ class CommonListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      trailing: Icon(iconData),
+      trailing: trailing,
       subtitle: Text(
         subtitle ?? '',
         style: const TextStyle(

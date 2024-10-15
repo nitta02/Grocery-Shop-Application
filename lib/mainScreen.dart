@@ -12,13 +12,15 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<Screenprovider>(context);
     return Scaffold(
-      body: provider.pages[provider.currentIndex]['page'],
+      body: provider.pages[provider.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: provider.currentIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
         onTap: provider.selectedIndex,
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+        selectedItemColor: Colors.green,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(provider.currentIndex == 0
@@ -28,9 +30,9 @@ class MainScreen extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(provider.currentIndex == 1
-                ? IconlyBold.category
-                : IconlyLight.category),
-            label: 'Category',
+                ? IconlyBold.message
+                : IconlyLight.message),
+            label: 'Messages',
           ),
           BottomNavigationBarItem(
             icon: Icon(

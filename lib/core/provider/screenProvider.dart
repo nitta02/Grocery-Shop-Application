@@ -1,29 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/presentation/pages/cart/cart.dart';
-import 'package:grocery_shop_app/presentation/pages/category/category.dart';
+import 'package:grocery_shop_app/presentation/pages/cart.dart';
 import 'package:grocery_shop_app/presentation/pages/home/home.dart';
+import 'package:grocery_shop_app/presentation/pages/msgScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/user.dart';
 
 class Screenprovider extends ChangeNotifier {
   //List of Pages
 
-  List<Map<String, dynamic>> pages = [
-    {
-      "page": const HomePage(),
-      "title": "Home",
-    },
-    {
-      "page": const CatagoryPage(),
-      "title": "Category",
-    },
-    {
-      "page": const CartPage(),
-      "title": "Cart",
-    },
-    {
-      "page": const UserPage(),
-      "title": "User",
-    },
+  List pages = [
+    const HomePage(),
+    const MessageScreen(),
+    const CartPage(),
+    const UserPage(),
   ];
 
   int _currentIndex = 0;
