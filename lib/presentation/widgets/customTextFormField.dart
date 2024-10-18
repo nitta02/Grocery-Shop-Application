@@ -6,13 +6,13 @@ class CustomTextFormFeild extends StatelessWidget {
   final String hintText;
   final TextStyle? hintStyle;
   IconData? iconData;
-  Color? color;
+  Color? iconColor;
   CustomTextFormFeild({
     super.key,
     required this.hintText,
     this.hintStyle,
     this.iconData,
-    this.color,
+    this.iconColor,
   });
 
   @override
@@ -21,7 +21,7 @@ class CustomTextFormFeild extends StatelessWidget {
       decoration: InputDecoration(
           suffixIcon: Icon(
             iconData,
-            color: color,
+            color: iconColor,
           ),
           hintText: hintText,
           hintStyle: hintStyle,

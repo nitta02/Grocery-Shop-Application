@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const CustomText(
+      title: CustomText(
         text: 'ALL PRODUCTS',
         fontWeight: FontWeight.bold,
         fontSize: 15,

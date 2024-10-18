@@ -16,7 +16,7 @@ class CartPage extends StatelessWidget {
       body: Consumer<ProductProvider>(
         builder: (context, value, child) => Column(
           children: [
-            const GlobalAppBar(
+            GlobalAppBar(
               text: "CART",
             ),
             const SizedBox(

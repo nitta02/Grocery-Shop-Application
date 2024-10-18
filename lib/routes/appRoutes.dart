@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:grocery_shop_app/presentation/pages/category.dart';
-import 'package:grocery_shop_app/presentation/pages/msgScreen.dart';
+import 'package:grocery_shop_app/presentation/screens/msgScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/order/orderScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/viewed/viewedScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/wishlists/wishlist.dart';
-import 'package:grocery_shop_app/presentation/screens/allProductsScreen.dart';
-import 'package:grocery_shop_app/presentation/screens/onnSale.dart';
+import 'package:grocery_shop_app/presentation/pages/allProductsScreen.dart';
+import 'package:grocery_shop_app/presentation/pages/onnSale.dart';
 
 class AppRoutes {
   static const String onSaleScreen = '/OnSaleScreen';

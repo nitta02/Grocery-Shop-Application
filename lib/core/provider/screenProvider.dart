@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/presentation/pages/cart.dart';
+import 'package:grocery_shop_app/presentation/screens/cart.dart';
 import 'package:grocery_shop_app/presentation/pages/home/home.dart';
-import 'package:grocery_shop_app/presentation/pages/msgScreen.dart';
-import 'package:grocery_shop_app/presentation/pages/user/user.dart';
+import 'package:grocery_shop_app/presentation/screens/msgScreen.dart';
+import 'package:grocery_shop_app/presentation/screens/user.dart';
 
 class Screenprovider extends ChangeNotifier {
   //List of Pages

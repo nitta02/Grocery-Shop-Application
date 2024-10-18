@@ -5,7 +5,6 @@ import 'package:grocery_shop_app/core/provider/themeProvider.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:grocery_shop_app/routes/globalNavigator.dart';
 import 'package:grocery_shop_app/presentation/widgets/CommonListtile.dart';
-import 'package:grocery_shop_app/presentation/widgets/customText.dart';
 import 'package:provider/provider.dart';
 
 class UserPage extends StatefulWidget {
@@ -42,14 +41,14 @@ class _UserPageState extends State<UserPage> {
         CommonListTile(
           title: 'Address',
           subtitle: 'Address Details',
-          trailing: Icon(IconlyLight.arrowRight2),
+          trailing: const Icon(IconlyLight.arrowRight2),
           onTap: () async {
             await _showAddressDetails(context);
           },
         ),
         CommonListTile(
           title: 'Orders',
-          trailing: Icon(IconlyLight.bag),
+          trailing: const Icon(IconlyLight.bag),
           onTap: () {
             GlobalNavigator.navigateTo(
               context: context,
@@ -59,7 +58,7 @@ class _UserPageState extends State<UserPage> {
         ),
         CommonListTile(
           title: 'Wishlist',
-          trailing: Icon(IconlyLight.heart),
+          trailing: const Icon(IconlyLight.heart),
           onTap: () {
             GlobalNavigator.navigateTo(
               context: context,
@@ -69,7 +68,7 @@ class _UserPageState extends State<UserPage> {
         ),
         CommonListTile(
           title: 'Viewed',
-          trailing: Icon(IconlyLight.show),
+          trailing: const Icon(IconlyLight.show),
           onTap: () {
             GlobalNavigator.navigateTo(
               context: context,
@@ -92,12 +91,12 @@ class _UserPageState extends State<UserPage> {
         ),
         CommonListTile(
           title: 'Forget Passowrd',
-          trailing: Icon(IconlyLight.password),
+          trailing: const Icon(IconlyLight.password),
           onTap: () {},
         ),
         CommonListTile(
           title: 'Sign Out',
-          trailing: Icon(IconlyLight.logout),
+          trailing: const Icon(IconlyLight.logout),
           onTap: () async {
             _showSignOutDialog();
           },
@@ -111,66 +110,46 @@ class _UserPageState extends State<UserPage> {
       padding: const EdgeInsets.symmetric(
         horizontal: 15,
       ),
-      height: 180,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(15),
-          bottomRight: Radius.circular(15),
-        ),
-        color: Colors.green,
-      ),
-      width: double.infinity,
-      child: Column(
+      height: 120,
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(
-            height: 15,
+          SizedBox(
+            height: 30,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Column(
+              CircleAvatar(
+                radius: 40,
+                backgroundImage: NetworkImage(
+                    'https://img.freepik.com/premium-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg'),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      CustomText(
-                        text: "Hi, ",
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        fontColor: Colors.black,
+                      Text(
+                        'Hi, ',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      CustomText(
-                        text: "Tonmoy",
-                        fontWeight: FontWeight.w500,
-                        fontSize: 15,
-                        fontColor: Colors.white,
+                      Text(
+                        'Tonmoy',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
-                  CustomText(
-                    text: "tonmoy@gmail.com",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15,
-                    fontColor: Colors.white,
+                  Text(
+                    'tonmoy@gmail.com',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                 ],
               ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  height: 100,
-                  width: 55,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                  ),
-                  child: const CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        'https://img.freepik.com/premium-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg'),
-                  ),
-                ),
-              )
             ],
           ),
         ],

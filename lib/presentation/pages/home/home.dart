@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
           ),
           child: CustomTextFormFeild(
             iconData: IconlyLight.search,
-            color: Colors.green,
+            iconColor: Colors.green,
             hintText: 'Search for products',
             hintStyle: const TextStyle(
               fontWeight: FontWeight.w200,

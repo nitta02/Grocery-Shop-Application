@@ -46,14 +46,19 @@ List<CategoryModel> categoryModelList = [
     categoryImagePath: ImagePaths.groceryCat2,
     items: <ProductsModel>[
       ProductsModel(
-        itemName: 'Apple',
-        price: 10.0,
-        itemImagePath: 'assets/images/apple.png',
+        itemName: 'strawberry',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/002-strawberry.png',
       ),
       ProductsModel(
-        itemName: 'Banana',
+        itemName: 'orange',
         price: 5.0,
-        itemImagePath: 'assets/images/banana.png',
+        itemImagePath: 'assets/icons/items/fruits/003-orange.png',
+      ),
+      ProductsModel(
+        itemName: 'watermelon',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/004-watermelon.png',
       ),
     ],
   ),
@@ -62,14 +67,19 @@ List<CategoryModel> categoryModelList = [
     categoryImagePath: ImagePaths.groceryCat3,
     items: <ProductsModel>[
       ProductsModel(
-        itemName: 'Apple',
-        price: 10.0,
-        itemImagePath: 'assets/images/apple.png',
+        itemName: 'strawberry',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/002-strawberry.png',
       ),
       ProductsModel(
-        itemName: 'Banana',
+        itemName: 'orange',
         price: 5.0,
-        itemImagePath: 'assets/images/banana.png',
+        itemImagePath: 'assets/icons/items/fruits/003-orange.png',
+      ),
+      ProductsModel(
+        itemName: 'watermelon',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/004-watermelon.png',
       ),
     ],
   ),
@@ -78,14 +88,19 @@ List<CategoryModel> categoryModelList = [
     categoryImagePath: ImagePaths.groceryCat4,
     items: <ProductsModel>[
       ProductsModel(
-        itemName: 'Apple',
-        price: 10.0,
-        itemImagePath: 'assets/images/apple.png',
+        itemName: 'strawberry',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/002-strawberry.png',
       ),
       ProductsModel(
-        itemName: 'Banana',
+        itemName: 'orange',
         price: 5.0,
-        itemImagePath: 'assets/images/banana.png',
+        itemImagePath: 'assets/icons/items/fruits/003-orange.png',
+      ),
+      ProductsModel(
+        itemName: 'watermelon',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/004-watermelon.png',
       ),
     ],
   ),
@@ -94,14 +109,19 @@ List<CategoryModel> categoryModelList = [
     categoryImagePath: ImagePaths.groceryCat5,
     items: <ProductsModel>[
       ProductsModel(
-        itemName: 'Apple',
-        price: 10.0,
-        itemImagePath: 'assets/images/apple.png',
+        itemName: 'strawberry',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/002-strawberry.png',
       ),
       ProductsModel(
-        itemName: 'Banana',
+        itemName: 'orange',
         price: 5.0,
-        itemImagePath: 'assets/images/banana.png',
+        itemImagePath: 'assets/icons/items/fruits/003-orange.png',
+      ),
+      ProductsModel(
+        itemName: 'watermelon',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/004-watermelon.png',
       ),
     ],
   ),
@@ -110,14 +130,19 @@ List<CategoryModel> categoryModelList = [
     categoryImagePath: ImagePaths.groceryCat6,
     items: <ProductsModel>[
       ProductsModel(
-        itemName: 'Apple',
-        price: 10.0,
-        itemImagePath: 'assets/images/apple.png',
+        itemName: 'strawberry',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/002-strawberry.png',
       ),
       ProductsModel(
-        itemName: 'Banana',
+        itemName: 'orange',
         price: 5.0,
-        itemImagePath: 'assets/images/banana.png',
+        itemImagePath: 'assets/icons/items/fruits/003-orange.png',
+      ),
+      ProductsModel(
+        itemName: 'watermelon',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/004-watermelon.png',
       ),
     ],
   ),
@@ -126,14 +151,19 @@ List<CategoryModel> categoryModelList = [
     categoryImagePath: ImagePaths.groceryCat7,
     items: <ProductsModel>[
       ProductsModel(
-        itemName: 'Apple',
-        price: 10.0,
-        itemImagePath: 'assets/images/apple.png',
+        itemName: 'strawberry',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/002-strawberry.png',
       ),
       ProductsModel(
-        itemName: 'Banana',
+        itemName: 'orange',
         price: 5.0,
-        itemImagePath: 'assets/images/banana.png',
+        itemImagePath: 'assets/icons/items/fruits/003-orange.png',
+      ),
+      ProductsModel(
+        itemName: 'watermelon',
+        price: 5.0,
+        itemImagePath: 'assets/icons/items/fruits/004-watermelon.png',
       ),
     ],
   ),

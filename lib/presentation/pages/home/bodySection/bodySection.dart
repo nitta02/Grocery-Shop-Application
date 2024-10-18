@@ -51,7 +51,7 @@ class BodySection extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        const CustomText(
+        CustomText(
           text: 'CATEGORY',
           fontWeight: FontWeight.bold,
           fontSize: 16,
@@ -143,7 +143,7 @@ class BodySection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const CustomText(
+            CustomText(
               text: 'POPULAR PRODUCTS',
               fontWeight: FontWeight.bold,
               fontSize: 16,
@@ -154,7 +154,7 @@ class BodySection extends StatelessWidget {
                 GlobalNavigator.navigateTo(
                     context: context, routeName: AppRoutes.allProductScreen);
               },
-              child: const CustomText(
+              child: CustomText(
                 text: 'View All',
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
@@ -187,7 +187,7 @@ class BodySection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const CustomText(
+            CustomText(
               text: 'POPULAR YOU NEED',
               fontWeight: FontWeight.bold,
               fontSize: 16,
@@ -198,7 +198,7 @@ class BodySection extends StatelessWidget {
                 GlobalNavigator.navigateTo(
                     context: context, routeName: AppRoutes.onSaleScreen);
               },
-              child: const CustomText(
+              child: CustomText(
                 text: 'View All',
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
