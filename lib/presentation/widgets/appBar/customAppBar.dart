@@ -1,7 +1,8 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:grocery_shop_app/presentation/screens/cart.dart';
 import 'package:grocery_shop_app/presentation/widgets/customText.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -58,7 +59,16 @@ class CustomAppBar extends StatelessWidget {
                 fontColor: Colors.white,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  // Navigate to CartPage with back button
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CartPage(
+                          showBackButton: true), // Pass flag for back button
+                    ),
+                  );
+                },
                 child: Container(
                   height: 80,
                   width: 35,
@@ -67,7 +77,7 @@ class CustomAppBar extends StatelessWidget {
                     color: Colors.white,
                   ),
                   child: const Icon(
-                    IconlyLight.notification,
+                    IconlyLight.buy,
                     color: Colors.green,
                   ),
                 ),

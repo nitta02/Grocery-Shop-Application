@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:grocery_shop_app/presentation/pages/category.dart';
+import 'package:grocery_shop_app/presentation/screens/cart.dart';
 import 'package:grocery_shop_app/presentation/screens/msgScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/order/orderScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/viewed/viewedScreen.dart';
@@ -17,6 +18,7 @@ class AppRoutes {
   static const String orderScreen = '/orderScreen';
   static const String viewedScreen = '/viewedScreen';
   static const String msgScreen = '/MessageScreen';
+  static const String cartScreen = '/CartScreen';
 
   static Map<String, WidgetBuilder> routes = {
     onSaleScreen: (context) => const OnSaleScreen(),
@@ -26,5 +28,6 @@ class AppRoutes {
     orderScreen: (context) => const OrderScreen(),
     viewedScreen: (context) => const ViewedScreen(),
     msgScreen: (context) => const MessageScreen(),
+    cartScreen: (context) => const CartPage(),
   };
 }

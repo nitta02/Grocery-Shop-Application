@@ -1,12 +1,10 @@
-// ignore_for_file: file_names
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/core/provider/productProvider.dart';
 import 'package:grocery_shop_app/core/provider/wishListProivder.dart';
 import 'package:grocery_shop_app/core/model/productModels.dart';
 import 'package:grocery_shop_app/presentation/pages/home/home.dart';
+import 'package:grocery_shop_app/presentation/screens/cart.dart';
 import 'package:grocery_shop_app/presentation/widgets/appBar/customAppBar.dart';
 import 'package:grocery_shop_app/presentation/widgets/containerButton.dart';
 import 'package:grocery_shop_app/presentation/widgets/customText.dart';
@@ -22,7 +20,8 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wishlistProvider = Provider.of<WishlistProvider>(context);
-    final value = Provider.of<ProductProvider>(context, listen: false);
+    final productProvider =
+        Provider.of<ProductProvider>(context); // Access ProductProvider
 
     return Scaffold(
       body: Column(
@@ -111,7 +110,15 @@ class ProductDetails extends StatelessWidget {
                   Expanded(
                     child: CustomContainerButton(
                       onTap: () {
-                        value.addtoCart(productModel);
+                        productProvider
+                            .addToCart(productModel); // Add product to cart
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor: Colors.green,
+                            content:
+                                Text("${productModel.itemName} added to cart!"),
+                          ),
+                        );
                       },
                       continerColor: Colors.green,
                       text: "Add to Cart",
@@ -123,7 +130,17 @@ class ProductDetails extends StatelessWidget {
                   ),
                   Expanded(
                     child: CustomContainerButton(
-                      onTap: () {},
+                      onTap: () {
+                        // Navigate to CartPage with back button
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const CartPage(
+                                showBackButton:
+                                    true), // Pass flag for back button
+                          ),
+                        );
+                      },
                       continerColor: Colors.green,
                       text: "Buy Now",
                       textColor: Colors.white,
