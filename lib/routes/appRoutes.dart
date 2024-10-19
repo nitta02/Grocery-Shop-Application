@@ -6,7 +6,7 @@ import 'package:grocery_shop_app/presentation/screens/cart.dart';
 import 'package:grocery_shop_app/presentation/screens/msgScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/order/orderScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/viewed/viewedScreen.dart';
-import 'package:grocery_shop_app/presentation/pages/user/wishlists/wishlist.dart';
+import 'package:grocery_shop_app/presentation/pages/wishlist.dart';
 import 'package:grocery_shop_app/presentation/pages/allProductsScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/onnSale.dart';
 

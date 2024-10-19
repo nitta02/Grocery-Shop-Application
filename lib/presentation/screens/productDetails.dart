@@ -93,14 +93,18 @@ class ProductDetails extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {
-                            wishlistProvider.addTowish(productModel);
-                          },
-                          icon: const Icon(
-                            IconlyLight.heart,
-                            color: Colors.green,
-                          ),
-                        ),
+                            onPressed: () {
+                              wishlistProvider.addTowish(productModel, context);
+                            },
+                            icon: wishlistProvider.isFav
+                                ? Icon(
+                                    IconlyBold.heart,
+                                    color: Colors.red,
+                                  )
+                                : Icon(
+                                    IconlyLight.heart,
+                                    color: Colors.green,
+                                  )),
                       ],
                     ),
                   ),
@@ -115,8 +119,9 @@ class ProductDetails extends StatelessWidget {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             backgroundColor: Colors.green,
-                            content:
-                                Text("${productModel.itemName} added to cart!"),
+                            content: Text(
+                              "${productModel.itemName} added to cart!",
+                            ),
                           ),
                         );
                       },

@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_shop_app/core/model/productModels.dart';
+import 'package:grocery_shop_app/core/provider/wishListProivder.dart';
 import 'package:grocery_shop_app/presentation/screens/productDetails.dart';
+import 'package:provider/provider.dart';
 
 class ProductContainer extends StatelessWidget {
   final ProductsModel productsModel;
@@ -11,6 +13,8 @@ class ProductContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final wishlistProvider =
+        Provider.of<WishlistProvider>(context, listen: false);
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -37,17 +41,29 @@ class ProductContainer extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            ClipRRect(
-              child: Container(
-                decoration: const BoxDecoration(),
-                child: Image.asset(
-                  productsModel.itemImagePath,
-                  height: 120,
-                  width: double.infinity,
-                  fit: BoxFit.fitHeight,
+            Stack(children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: wishlistProvider.isFav
+                      ? Icon(IconlyBold.heart)
+                      : Icon(IconlyLight.heart),
+                  color: wishlistProvider.isFav ? Colors.red : Colors.green,
                 ),
               ),
-            ),
+              ClipRRect(
+                child: Container(
+                  decoration: const BoxDecoration(),
+                  child: Image.asset(
+                    productsModel.itemImagePath,
+                    height: 120,
+                    width: double.infinity,
+                    fit: BoxFit.fitHeight,
+                  ),
+                ),
+              ),
+            ]),
             Container(
               decoration: BoxDecoration(
                 color: Colors.green.withOpacity(0.2),

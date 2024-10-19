@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:grocery_shop_app/core/model/productModels.dart';
