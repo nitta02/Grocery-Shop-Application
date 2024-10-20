@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_shop_app/presentation/pages/category.dart';
 import 'package:grocery_shop_app/presentation/pages/cart.dart';
-import 'package:grocery_shop_app/presentation/pages/msgScreen.dart';
-import 'package:grocery_shop_app/presentation/pages/user/order/orderScreen.dart';
-import 'package:grocery_shop_app/presentation/pages/wishlist.dart';
+import 'package:grocery_shop_app/presentation/pages/screens/msgScreen.dart';
+import 'package:grocery_shop_app/presentation/pages/screens/user/order/orderScreen.dart';
+import 'package:grocery_shop_app/presentation/pages/screens/user/wishlist.dart';
 import 'package:grocery_shop_app/presentation/pages/allProductsScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/onnSale.dart';
 

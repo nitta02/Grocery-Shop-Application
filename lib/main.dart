@@ -5,7 +5,7 @@ import 'package:grocery_shop_app/data/provider/screenProvider.dart';
 import 'package:grocery_shop_app/data/provider/themeProvider.dart';
 import 'package:grocery_shop_app/data/provider/wishListProivder.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
-import 'package:grocery_shop_app/presentation/pages/auth/signIn.dart';
+import 'package:grocery_shop_app/presentation/pages/screens/auth/signIn.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 

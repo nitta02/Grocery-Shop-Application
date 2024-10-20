@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/presentation/pages/home/bodySection/bodySection.dart';
+import 'package:grocery_shop_app/presentation/pages/screens/home/bodySection/bodySection.dart';
 import 'package:grocery_shop_app/presentation/widgets/customTextFormField.dart';
 
 class HomePage extends StatelessWidget {
