@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/core/provider/productProvider.dart';
-import 'package:grocery_shop_app/presentation/widgets/appBar/appBar.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:grocery_shop_app/data/provider/productProvider.dart';
+import 'package:grocery_shop_app/presentation/widgets/appBar/globalAppBar.dart';
 import 'package:grocery_shop_app/presentation/widgets/productContainer.dart';
 import 'package:provider/provider.dart';
 
@@ -13,12 +14,20 @@ class OrderScreen extends StatelessWidget {
       body: Consumer<ProductProvider>(
         builder: (context, value, child) => Column(
           children: [
-            AppBarCustom(text: 'ORDERS'),
-            ListView.builder(
-              itemCount: value.cartItems.length,
+            GlobalAppBar(
+              text: 'Orders',
+              iconData: IconlyLight.arrowLeft,
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListView.separated(
+              shrinkWrap: true,
               itemBuilder: (context, index) => ProductContainer(
                 productsModel: value.cartItems[index],
               ),
+              separatorBuilder: (context, index) => const Divider(),
+              itemCount: value.cartItems.length,
             )
           ],
         ),

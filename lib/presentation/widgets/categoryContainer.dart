@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:grocery_shop_app/presentation/pages/categoryDetails.dart';
-import 'package:grocery_shop_app/core/model/categoryClass.dart';
+import 'package:grocery_shop_app/data/model/categoryClass.dart';
 
 class CategoryContainer extends StatelessWidget {
   final CategoryModel category;

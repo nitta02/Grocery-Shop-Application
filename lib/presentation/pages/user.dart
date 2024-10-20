@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/core/provider/themeProvider.dart';
+import 'package:grocery_shop_app/data/provider/themeProvider.dart';
 import 'package:grocery_shop_app/routes/appRoutes.dart';
 import 'package:grocery_shop_app/routes/globalNavigator.dart';
 import 'package:grocery_shop_app/presentation/widgets/CommonListtile.dart';
@@ -66,16 +66,7 @@ class _UserPageState extends State<UserPage> {
             );
           },
         ),
-        CommonListTile(
-          title: 'Viewed',
-          trailing: const Icon(IconlyLight.show),
-          onTap: () {
-            GlobalNavigator.navigateTo(
-              context: context,
-              routeName: AppRoutes.viewedScreen,
-            );
-          },
-        ),
+        
         CommonListTile(
           title: 'Theme Mode',
           trailing: Consumer<Themeprovider>(

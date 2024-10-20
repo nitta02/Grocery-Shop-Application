@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/presentation/screens/cart.dart';
+import 'package:grocery_shop_app/presentation/pages/cart.dart';
 import 'package:grocery_shop_app/presentation/widgets/customText.dart';
 
 class CustomAppBar extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/core/provider/wishListProivder.dart';
+import 'package:grocery_shop_app/data/provider/wishListProivder.dart';
 import 'package:grocery_shop_app/presentation/widgets/customText.dart';
 import 'package:grocery_shop_app/presentation/widgets/productContainer.dart';
 import 'package:provider/provider.dart';

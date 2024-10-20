@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/core/provider/screenProvider.dart';
+import 'package:grocery_shop_app/data/provider/screenProvider.dart';
 import 'package:provider/provider.dart';
 
 class MainScreen extends StatelessWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:grocery_shop_app/core/provider/productProvider.dart';
-import 'package:grocery_shop_app/core/provider/wishListProivder.dart';
-import 'package:grocery_shop_app/core/model/productModels.dart';
+import 'package:grocery_shop_app/data/provider/productProvider.dart';
+import 'package:grocery_shop_app/data/provider/wishListProivder.dart';
+import 'package:grocery_shop_app/data/model/productModels.dart';
 import 'package:grocery_shop_app/presentation/pages/home/home.dart';
-import 'package:grocery_shop_app/presentation/screens/cart.dart';
+import 'package:grocery_shop_app/presentation/pages/cart.dart';
 import 'package:grocery_shop_app/presentation/widgets/appBar/customAppBar.dart';
 import 'package:grocery_shop_app/presentation/widgets/containerButton.dart';
 import 'package:grocery_shop_app/presentation/widgets/customText.dart';

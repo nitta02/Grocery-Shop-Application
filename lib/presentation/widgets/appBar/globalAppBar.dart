@@ -41,6 +41,9 @@ class GlobalAppBar extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  width: 10,
+                ),
                 CustomText(
                   text: text,
                   fontWeight: FontWeight.w800,

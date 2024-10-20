@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_shop_app/core/utils/color.dart';
 import 'package:grocery_shop_app/mainScreen.dart';
-import 'package:grocery_shop_app/presentation/screens/auth/register.dart';
+import 'package:grocery_shop_app/presentation/pages/auth/register.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});

@@ -2,10 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:grocery_shop_app/presentation/pages/category.dart';
-import 'package:grocery_shop_app/presentation/screens/cart.dart';
-import 'package:grocery_shop_app/presentation/screens/msgScreen.dart';
+import 'package:grocery_shop_app/presentation/pages/cart.dart';
+import 'package:grocery_shop_app/presentation/pages/msgScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/user/order/orderScreen.dart';
-import 'package:grocery_shop_app/presentation/pages/user/viewed/viewedScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/wishlist.dart';
 import 'package:grocery_shop_app/presentation/pages/allProductsScreen.dart';
 import 'package:grocery_shop_app/presentation/pages/onnSale.dart';
@@ -26,7 +25,6 @@ class AppRoutes {
     allProductScreen: (context) => const AllProductScreen(),
     wishListScreen: (context) => const WishlistScreen(),
     orderScreen: (context) => const OrderScreen(),
-    viewedScreen: (context) => const ViewedScreen(),
     msgScreen: (context) => const MessageScreen(),
     cartScreen: (context) => const CartPage(),
   };

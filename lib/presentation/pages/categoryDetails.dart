@@ -1,8 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/core/model/productModels.dart';
-import 'package:grocery_shop_app/presentation/screens/productDetails.dart';
+import 'package:grocery_shop_app/data/model/productModels.dart';
+import 'package:grocery_shop_app/presentation/pages/productDetails.dart';
 
 class CategoryDetailsScreen extends StatelessWidget {
   final String categoryName;
